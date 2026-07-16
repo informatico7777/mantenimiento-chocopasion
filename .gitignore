@@ -2,15 +2,38 @@
 .env
 venv/
 .venv/
+*.env
 
 # Python
 __pycache__/
 *.py[cod]
 *.egg-info/
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg
 
 # Django
 *.log
 staticfiles/
+db.sqlite3
+db.sqlite3-journal
+
+# Archivos de migración de datos (descomentar si no quieres subir JSONs)
+# *_data.json
 
 # Media generada (conservar las carpetas, ignorar el contenido subido)
 media/maquinas/*

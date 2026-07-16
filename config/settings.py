@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # Para servir archivos estáticos en Heroku
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -75,9 +76,15 @@ WSGI_APPLICATION = "config.wsgi.application"
 ASGI_APPLICATION = "config.asgi.application"
 
 # ---------------------------------------------------------------------------
-# Base de datos (MySQL 8.4 / InnoDB). Credenciales desde .env
+# Base de datos
+# En producción (Heroku): PostgreSQL
+# En desarrollo: MySQL 8.4 / InnoDB
 # ---------------------------------------------------------------------------
+import dj_database_url  # noqa: E402
+
 _DB_ENGINE = config("DB_ENGINE", default="django.db.backends.mysql")
+
+# Configuración por defecto (desarrollo con MySQL)
 DATABASES = {
     "default": {
         "ENGINE": _DB_ENGINE,
@@ -88,12 +95,18 @@ DATABASES = {
         "PORT": config("DB_PORT", default="3306"),
     }
 }
+
 # Opciones específicas de MySQL (charset utf8mb4 y modo estricto).
 if "mysql" in _DB_ENGINE:
     DATABASES["default"]["OPTIONS"] = {
         "charset": "utf8mb4",
         "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
     }
+
+# En Heroku, usar DATABASE_URL (PostgreSQL automático)
+DATABASE_URL = config("DATABASE_URL", default=None)
+if DATABASE_URL:
+    DATABASES["default"] = dj_database_url.parse(DATABASE_URL, conn_max_age=600)
 
 # ---------------------------------------------------------------------------
 # Autenticación
@@ -137,6 +150,9 @@ USE_TZ = False  # La BD trabaja en hora local (-05:00).
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# Configuración de WhiteNoise para servir archivos estáticos en producción
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
