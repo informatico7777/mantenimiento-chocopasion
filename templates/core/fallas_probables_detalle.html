@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Falla probable{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3><i class="bi bi-diagram-2"></i> Falla probable</h3>
+    <div>
+        {% if PUEDE_GESTIONAR_ACTIVOS %}
+        <a href="{% url 'core:falla_probable_editar' falla.pk %}" class="btn btn-outline-secondary"><i class="bi bi-pencil"></i> Editar</a>
+        <a href="{% url 'core:falla_probable_eliminar' falla.pk %}" class="btn btn-outline-danger"><i class="bi bi-trash"></i> Eliminar</a>
+        {% endif %}
+        <a href="{% url 'core:maquina_detalle' falla.id_maquina.pk %}" class="btn btn-outline-primary"><i class="bi bi-cpu"></i> Ver máquina</a>
+    </div>
+</div>
+
+{% if falla.nivel_riesgo == 'ALTO' or falla.nivel_riesgo == 'CRITICO' %}
+<div class="alert alert-danger"><i class="bi bi-exclamation-triangle"></i> Riesgo <strong>{{ falla.get_nivel_riesgo_display }}</strong>: priorizar acción preventiva.</div>
+{% endif %}
+
+<div class="card shadow-sm"><div class="card-body"><div class="row">
+    <div class="col-md-6"><table class="table table-sm">
+        <tr><th style="width:210px">Máquina</th><td>{{ falla.id_maquina.codigo_activo }} — {{ falla.id_maquina.nombre_maquina }}</td></tr>
+        <tr><th>Componente</th><td>{{ falla.id_componente.nombre_componente|default:"—" }}</td></tr>
+        <tr><th>Nivel de probabilidad</th><td>{{ falla.get_nivel_probabilidad_display }}</td></tr>
+        <tr><th>Probabilidad</th><td>{{ falla.probabilidad_porcentaje|default:"—" }} %</td></tr>
+    </table></div>
+    <div class="col-md-6"><table class="table table-sm">
+        <tr><th style="width:210px">Severidad (1-10)</th><td>{{ falla.severidad|default:"—" }}</td></tr>
+        <tr><th>Detectabilidad (1-10)</th><td>{{ falla.detectabilidad|default:"—" }}</td></tr>
+        <tr><th>Nivel de riesgo</th><td><span class="badge bg-{% if falla.nivel_riesgo == 'CRITICO' %}danger{% elif falla.nivel_riesgo == 'ALTO' %}warning{% elif falla.nivel_riesgo == 'MEDIO' %}info{% else %}secondary{% endif %}">{{ falla.get_nivel_riesgo_display }}</span></td></tr>
+        <tr><th>Estado</th><td>{{ falla.get_estado_display }}</td></tr>
+    </table></div>
+</div>
+<p><strong>Descripción de la falla:</strong><br>{{ falla.descripcion_falla|linebreaksbr }}</p>
+{% if falla.causa_probable %}<p><strong>Causa probable:</strong> {{ falla.causa_probable }}</p>{% endif %}
+{% if falla.efecto_en_produccion %}<p><strong>Efecto en producción:</strong> {{ falla.efecto_en_produccion }}</p>{% endif %}
+{% if falla.accion_preventiva_sugerida %}<p class="mb-0"><strong>Acción preventiva sugerida:</strong> {{ falla.accion_preventiva_sugerida }}</p>{% endif %}
+</div></div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Checklist {{ ejecucion.id_maquina.codigo_activo }}{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3><i class="bi bi-clipboard-check"></i> Resultado del checklist</h3>
+    {% if ejecucion.resultado_general != 'APTA' and not ejecucion.genero_reporte_falla %}
+        <a href="{% url 'mantenimiento:checklist_generar_falla' ejecucion.pk %}" class="btn btn-danger"><i class="bi bi-exclamation-triangle"></i> Generar reporte de falla</a>
+    {% endif %}
+</div>
+
+<div class="card shadow-sm mb-3"><div class="card-body">
+    <div class="row">
+        <div class="col-md-4"><strong>Máquina:</strong> {{ ejecucion.id_maquina.codigo_activo }} — {{ ejecucion.id_maquina.nombre_maquina }}</div>
+        <div class="col-md-2"><strong>Fecha:</strong> {{ ejecucion.fecha }}</div>
+        <div class="col-md-2"><strong>Turno:</strong> {{ ejecucion.get_turno_display }}</div>
+        <div class="col-md-4"><strong>Revisó:</strong> {{ ejecucion.id_usuario.nombre_completo }}</div>
+    </div>
+    <hr>
+    <h4><span class="badge bg-{{ ejecucion.badge_resultado }}">{{ ejecucion.get_resultado_general_display }}</span>
+        {% if ejecucion.permite_produccion %}<span class="badge bg-success">Permite producción</span>{% else %}<span class="badge bg-danger">NO permite producción</span>{% endif %}
+    </h4>
+    {% if ejecucion.observacion_general %}<p class="mt-2 mb-0"><strong>Observación general:</strong> {{ ejecucion.observacion_general }}</p>{% endif %}
+</div></div>
+
+<div class="card shadow-sm"><div class="card-body p-0">
+<table class="table mb-0">
+    <thead class="table-light"><tr><th>Pregunta</th><th>Cumple</th><th>Valor</th><th>Alerta</th><th>Observación</th></tr></thead>
+    <tbody>
+    {% for d in detalles %}
+        <tr class="{% if not d.cumple %}table-warning{% endif %}">
+            <td>{{ d.id_item_checklist.pregunta }}</td>
+            <td>{% if d.cumple %}<span class="text-success"><i class="bi bi-check-circle"></i> Sí</span>{% else %}<span class="text-danger"><i class="bi bi-x-circle"></i> No</span>{% endif %}</td>
+            <td>{{ d.valor_medido|default:"-" }}</td>
+            <td>{{ d.get_nivel_alerta_display }}</td>
+            <td>{{ d.observacion|default:"-" }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div></div>
+<a href="{% url 'mantenimiento:checklist_list' %}" class="btn btn-outline-secondary mt-3">Volver al listado</a>
+{% endblock %}

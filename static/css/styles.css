@@ -1,0 +1,23 @@
+:root {
+    --cp-brown: #5a3825;
+    --cp-gold: #c79a3a;
+}
+body { background-color: #f4f6f9; }
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+}
+.sidebar .nav-link { border-radius: .375rem; padding: .45rem .6rem; font-size: .9rem; }
+.sidebar .nav-link:hover { background-color: rgba(255,255,255,.1); }
+.card-tarjeta { border-left: 4px solid var(--cp-gold); }
+.card-tarjeta .display-6 { font-weight: 600; }
+.login-wrapper {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #5a3825, #2c1810);
+}
+.login-card { width: 100%; max-width: 380px; }
+.table-sm td, .table-sm th { font-size: .85rem; }
+.badge-criticidad-ALTA, .badge-criticidad-MUY_ALTA { background-color: #dc3545; }

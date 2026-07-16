@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+    @page { size: A4 landscape; margin: 1.4cm; }
+    body { font-family: Helvetica, Arial, sans-serif; font-size: 8.5px; color: #222; }
+    h1 { font-size: 16px; color: #5a3825; margin: 0; }
+    .cab { border-bottom: 2px solid #c79a3a; padding-bottom: 6px; margin-bottom: 8px; }
+    .meta { color: #666; font-size: 8px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 4px; }
+    th, td { border: 1px solid #bbb; padding: 3px 4px; font-size: 7.5px; vertical-align: top; }
+    th { background: #f0e6d2; }
+    .vacio { color: #888; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="cab">
+    <h1>Auditoría del Sistema</h1>
+    <div class="meta">{{ planta }} · Generado: {{ fecha_generacion|date:"d/m/Y H:i" }} · Registros: {{ total }}{% if total > limite %} (mostrando los primeros {{ limite }}){% endif %}</div>
+    <div class="meta">
+        Filtros:
+        {% if filtros.usuario %}Usuario={{ filtros.usuario }} · {% endif %}
+        {% if filtros.accion %}Acción={{ filtros.accion }} · {% endif %}
+        {% if filtros.tabla %}Tabla={{ filtros.tabla }} · {% endif %}
+        {% if filtros.fecha_inicio %}Desde={{ filtros.fecha_inicio }} · {% endif %}
+        {% if filtros.fecha_fin %}Hasta={{ filtros.fecha_fin }} · {% endif %}
+        {% if filtros.q %}Texto="{{ filtros.q }}"{% endif %}
+    </div>
+</div>
+
+<table>
+<thead><tr>
+    <th>Fecha y hora</th><th>Usuario</th><th>Acción</th><th>Tabla</th>
+    <th>ID reg.</th><th>Descripción</th><th>IP</th>
+</tr></thead>
+<tbody>
+{% for e in eventos %}
+<tr>
+    <td>{{ e.fecha_hora|date:"d/m/Y H:i:s" }}</td>
+    <td>{% if e.id_usuario_id %}{{ e.id_usuario.nombre_completo }}{% else %}—{% endif %}</td>
+    <td>{{ e.get_accion_display }}</td>
+    <td>{{ e.tabla_afectada }}</td>
+    <td>{{ e.id_registro_afectado|default:"—" }}</td>
+    <td>{{ e.descripcion|default:""|truncatechars:90 }}</td>
+    <td>{{ e.ip_origen|default:"—" }}</td>
+</tr>
+{% empty %}
+<tr><td colspan="7" class="vacio">Sin eventos de auditoría para los filtros seleccionados.</td></tr>
+{% endfor %}
+</tbody>
+</table>
+
+<p class="meta" style="margin-top:16px;">Documento generado automáticamente por el Sistema de Gestión de Mantenimiento — Choco Pasión.</p>
+</body>
+</html>

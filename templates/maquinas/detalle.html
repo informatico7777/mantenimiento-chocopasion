@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% block title %}{{ maquina.codigo_activo }} - {{ APP_NOMBRE }}{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3><i class="bi bi-cpu"></i> {{ maquina.codigo_activo }} — {{ maquina.nombre_maquina }}</h3>
+    <div>
+        <a href="{% url 'mantenimiento:checklist_ejecutar' maquina.pk %}" class="btn btn-success"><i class="bi bi-clipboard-check"></i> Ejecutar checklist</a>
+        <a href="{% url 'core:maquina_editar' maquina.pk %}" class="btn btn-outline-secondary"><i class="bi bi-pencil"></i> Editar</a>
+    </div>
+</div>
+
+{% if componentes_danados %}
+<div class="alert alert-danger"><i class="bi bi-exclamation-octagon"></i>
+    <strong>Componentes en riesgo:</strong> {{ componentes_danados|length }} componente(s) DAÑADO o FUERA DE SERVICIO:
+    {% for c in componentes_danados %}<span class="badge bg-dark">{{ c.nombre_componente }} ({{ c.get_estado_componente_display }})</span> {% endfor %}
+</div>
+{% endif %}
+{% if fallas_criticas %}
+<div class="alert alert-danger"><i class="bi bi-exclamation-triangle"></i>
+    <strong>Fallas probables de riesgo CRÍTICO:</strong> {{ fallas_criticas|length }} registro(s).
+    {% for f in fallas_criticas %}<span class="badge bg-danger">{{ f.descripcion_falla|truncatechars:30 }}</span> {% endfor %}
+</div>
+{% endif %}
+{% if fallas_altas %}
+<div class="alert alert-warning"><i class="bi bi-exclamation-triangle"></i>
+    <strong>Fallas probables de riesgo ALTO:</strong> {{ fallas_altas|length }} registro(s).
+    {% for f in fallas_altas %}<span class="badge bg-warning text-dark">{{ f.descripcion_falla|truncatechars:30 }}</span> {% endfor %}
+</div>
+{% endif %}
+{% if hay_stock_bajo %}
+<div class="alert alert-danger"><i class="bi bi-box-seam"></i>
+    <strong>Repuestos críticos con stock bajo:</strong>
+    {% for it in repuestos_bajo_stock %}<span class="badge bg-danger">{{ it.id_repuesto.codigo_repuesto }} (stock {{ it.id_repuesto.stock_actual }} / min {{ it.id_repuesto.stock_minimo }})</span> {% endfor %}
+</div>
+{% endif %}
+{% if not componentes_danados and not fallas_riesgo_alto and not hay_stock_bajo %}
+<div class="alert alert-success"><i class="bi bi-check-circle"></i> Estado normal: sin componentes dañados, sin fallas de riesgo alto y con stock suficiente de repuestos críticos.</div>
+{% endif %}
+
+<ul class="nav nav-tabs" id="tabs" role="tablist">
+    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#generales">Datos</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#componentes">Componentes</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#fallas">Fallas probables</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#repuestoscriticos">Repuestos críticos</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#checklist">Checklist</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#observaciones">Observaciones</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#ordenes">OT y fallas</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#repuestos">Repuestos</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#energia">Energía</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#archivos">Archivos</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#historial">Historial</button></li>
+</ul>
+
+<div class="tab-content card border-top-0 shadow-sm"><div class="card-body">
+    <!-- Datos generales -->
+    <div class="tab-pane fade show active" id="generales">
+        <div class="row">
+            <div class="col-md-6"><table class="table table-sm">
+                <tr><th>Tipo</th><td>{{ maquina.tipo_maquina }}</td></tr>
+                <tr><th>Área</th><td>{{ maquina.id_area.nombre_area }}</td></tr>
+                <tr><th>Marca / Modelo</th><td>{{ maquina.marca|default:"-" }} / {{ maquina.modelo|default:"-" }}</td></tr>
+                <tr><th>N.º de serie</th><td>{{ maquina.numero_serie|default:"-" }}</td></tr>
+                <tr><th>Capacidad</th><td>{{ maquina.capacidad_valor|default:"-" }} {{ maquina.capacidad_unidad }}</td></tr>
+                <tr><th>Criticidad</th><td>{{ maquina.get_criticidad_display }}</td></tr>
+            </table></div>
+            <div class="col-md-6"><table class="table table-sm">
+                <tr><th>Estado</th><td><span class="badge bg-{{ maquina.badge_estado }}">{{ maquina.get_estado_operativo_display }}</span></td></tr>
+                <tr><th>Energía</th><td>{{ maquina.get_tipo_energia_display }}</td></tr>
+                <tr><th>Potencia</th><td>{{ maquina.potencia_kw|default:"-" }} kW / {{ maquina.potencia_hp|default:"-" }} HP</td></tr>
+                <tr><th>Consumo h / lote</th><td>{{ maquina.consumo_estimado_hora|default:"-" }} / {{ maquina.consumo_estimado_lote|default:"-" }}</td></tr>
+                <tr><th>Ubicación</th><td>{{ maquina.ubicacion_fisica|default:"-" }}</td></tr>
+                <tr><th>Responsable</th><td>{{ maquina.responsable_maquina.nombre_completo|default:"-" }}</td></tr>
+            </table></div>
+        </div>
+        <p class="text-muted mb-1">Funciones del proceso:</p>
+        {% for mf in funciones %}<span class="badge bg-{% if mf.es_funcion_principal %}primary{% else %}secondary{% endif %} me-1">{{ mf.id_funcion.nombre_etapa }}{% if mf.es_funcion_principal %} (principal){% endif %}</span>{% empty %}<span class="text-muted">Sin funciones asignadas.</span>{% endfor %}
+        {% if maquina.observaciones %}<p class="mt-3"><strong>Observaciones:</strong> {{ maquina.observaciones }}</p>{% endif %}
+    </div>
+
+    <!-- Bloque 1: Componentes (ordenados por prioridad preventiva) -->
+    <div class="tab-pane fade" id="componentes">
+        {% if PUEDE_GESTIONAR_ACTIVOS %}
+        <a href="{% url 'core:componente_crear_maquina' maquina.pk %}" class="btn btn-sm btn-primary mb-2"><i class="bi bi-plus-lg"></i> Agregar componente</a>
+        {% endif %}
+        <table class="table table-sm align-middle"><thead><tr><th>Componente</th><th>Tipo</th><th>Criticidad</th><th>Estado</th><th>Lubrica</th><th>Calibra</th><th>Prioridad prev.</th><th></th></tr></thead><tbody>
+        {% for c in componentes %}<tr class="{% if c.estado_componente == 'DANADO' or c.estado_componente == 'FUERA_DE_SERVICIO' %}table-danger{% endif %}"><td>{{ c.nombre_componente }}</td><td>{{ c.get_tipo_componente_display }}</td><td>{{ c.get_criticidad_componente_display }}</td><td>{{ c.get_estado_componente_display }}</td><td>{{ c.requiere_lubricacion|yesno:"Sí,No" }}</td><td>{{ c.requiere_calibracion|yesno:"Sí,No" }}</td><td><span class="badge bg-{{ c.prioridad.badge }}">{{ c.prioridad.etiqueta }}</span></td><td class="text-end"><a href="{% url 'core:componente_detalle' c.pk %}" class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></a>{% if PUEDE_GESTIONAR_ACTIVOS %} <a href="{% url 'core:componente_editar' c.pk %}" class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></a> <a href="{% url 'core:componente_eliminar' c.pk %}" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></a>{% endif %}</td></tr>{% empty %}<tr><td colspan="8" class="text-muted">Sin componentes.</td></tr>{% endfor %}
+        </tbody></table>
+        <p class="text-muted small mb-0">La prioridad preventiva combina criticidad del componente, nivel de riesgo de sus fallas, estado actual y disponibilidad de repuestos.</p>
+    </div>
+
+    <!-- Bloque 2: Fallas probables -->
+    <div class="tab-pane fade" id="fallas">
+        {% if PUEDE_GESTIONAR_ACTIVOS %}
+        <a href="{% url 'core:falla_probable_crear_maquina' maquina.pk %}" class="btn btn-sm btn-primary mb-2"><i class="bi bi-plus-lg"></i> Agregar falla probable</a>
+        {% endif %}
+        <table class="table table-sm align-middle"><thead><tr><th>Componente</th><th>Falla probable</th><th>Causa probable</th><th>Prob.</th><th>Sev.</th><th>Riesgo</th><th>Acción preventiva</th><th></th></tr></thead><tbody>
+        {% for f in fallas_probables %}<tr class="{% if f.nivel_riesgo == 'ALTO' or f.nivel_riesgo == 'CRITICO' %}table-warning{% endif %}"><td>{{ f.id_componente.nombre_componente|default:"-" }}</td><td>{{ f.descripcion_falla|truncatechars:40 }}</td><td>{{ f.causa_probable|default:"-"|truncatechars:30 }}</td><td>{{ f.get_nivel_probabilidad_display }}</td><td>{{ f.severidad|default:"-" }}</td><td><span class="badge bg-{% if f.nivel_riesgo == 'CRITICO' %}danger{% elif f.nivel_riesgo == 'ALTO' %}warning{% elif f.nivel_riesgo == 'MEDIO' %}info{% else %}secondary{% endif %}">{{ f.get_nivel_riesgo_display }}</span></td><td>{{ f.accion_preventiva_sugerida|default:"-"|truncatechars:30 }}</td><td class="text-end"><a href="{% url 'core:falla_probable_detalle' f.pk %}" class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></a>{% if PUEDE_GESTIONAR_ACTIVOS %} <a href="{% url 'core:falla_probable_editar' f.pk %}" class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></a> <a href="{% url 'core:falla_probable_eliminar' f.pk %}" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></a>{% endif %}</td></tr>{% empty %}<tr><td colspan="8" class="text-muted">Sin fallas registradas.</td></tr>{% endfor %}
+        </tbody></table>
+    </div>
+
+    <!-- Bloque 3: Repuestos críticos -->
+    <div class="tab-pane fade" id="repuestoscriticos">
+        {% if PUEDE_GESTIONAR_ACTIVOS %}
+        <a href="{% url 'core:repuesto_critico_agregar' maquina.pk %}" class="btn btn-sm btn-primary mb-2"><i class="bi bi-plus-lg"></i> Asociar repuesto crítico</a>
+        {% endif %}
+        <a href="{% url 'core:repuestos_criticos_list' maquina.pk %}" class="btn btn-sm btn-outline-secondary mb-2"><i class="bi bi-box-seam"></i> Ver pantalla completa</a>
+        <table class="table table-sm align-middle"><thead><tr><th>Repuesto</th><th>Stock actual</th><th>Stock mínimo</th><th>Criticidad</th><th>Reposición</th><th>Estado de stock</th><th></th></tr></thead><tbody>
+        {% for it in repuestos_criticos %}<tr class="{% if it.stock_bajo %}table-danger{% endif %}"><td>{{ it.id_repuesto.codigo_repuesto }} — {{ it.id_repuesto.nombre_repuesto }}</td><td>{{ it.id_repuesto.stock_actual }} {{ it.id_repuesto.unidad_medida }}</td><td>{{ it.id_repuesto.stock_minimo }}</td><td>{{ it.get_criticidad_repuesto_display }}</td><td>{{ it.tiempo_reposicion_dias|default:"—" }} días</td><td>{% if it.stock_bajo %}<span class="badge bg-danger">STOCK BAJO</span>{% else %}<span class="badge bg-success">OK</span>{% endif %}</td><td class="text-end">{% if PUEDE_GESTIONAR_ACTIVOS %}<a href="{% url 'core:repuesto_critico_editar' maquina.pk it.pk %}" class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></a> <a href="{% url 'core:repuesto_critico_eliminar' maquina.pk it.pk %}" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></a>{% endif %}</td></tr>{% empty %}<tr><td colspan="7" class="text-muted">Sin repuestos críticos asociados.</td></tr>{% endfor %}
+        </tbody></table>
+    </div>
+
+    <!-- Checklist -->
+    <div class="tab-pane fade" id="checklist">
+        <p>Ítems de checklist activos: {{ items_checklist|length }}</p>
+        <ol>{% for i in items_checklist %}<li>{{ i.pregunta }} {% if i.bloquea_produccion %}<span class="badge bg-danger">bloquea producción</span>{% endif %}</li>{% empty %}<li class="text-muted">Sin ítems.</li>{% endfor %}</ol>
+        <a href="{% url 'mantenimiento:checklist_ejecutar' maquina.pk %}" class="btn btn-sm btn-success">Ejecutar checklist diario</a>
+    </div>
+
+    <!-- Observaciones -->
+    <div class="tab-pane fade" id="observaciones">
+        <table class="table table-sm"><thead><tr><th>Fecha</th><th>Tipo</th><th>Nivel</th><th>Descripción</th><th>Estado</th></tr></thead><tbody>
+        {% for o in observaciones %}<tr><td>{{ o.fecha_hora|date:"d/m H:i" }}</td><td>{{ o.get_tipo_observacion_display }}</td><td><span class="badge bg-{{ o.badge_importancia }}">{{ o.get_nivel_importancia_display }}</span></td><td>{{ o.descripcion|truncatechars:60 }}</td><td>{{ o.get_estado_observacion_display }}</td></tr>{% empty %}<tr><td colspan="5" class="text-muted">Sin observaciones.</td></tr>{% endfor %}
+        </tbody></table>
+    </div>
+
+    <!-- OT y fallas -->
+    <div class="tab-pane fade" id="ordenes">
+        <h6>Reportes de falla</h6>
+        <table class="table table-sm"><thead><tr><th>Código</th><th>Síntoma</th><th>Estado</th></tr></thead><tbody>
+        {% for f in reportes_falla %}<tr><td><a href="{% url 'mantenimiento:falla_detalle' f.pk %}">{{ f.codigo_reporte }}</a></td><td>{{ f.sintoma }}</td><td>{{ f.get_estado_reporte_display }}</td></tr>{% empty %}<tr><td colspan="3" class="text-muted">Sin reportes.</td></tr>{% endfor %}
+        </tbody></table>
+        <h6>Órdenes de trabajo</h6>
+        <table class="table table-sm"><thead><tr><th>Código</th><th>Tipo</th><th>Estado</th></tr></thead><tbody>
+        {% for ot in ordenes %}<tr><td><a href="{% url 'mantenimiento:ot_detalle' ot.pk %}">{{ ot.codigo_ot }}</a></td><td>{{ ot.get_tipo_ot_display }}</td><td>{{ ot.get_estado_ot_display }}</td></tr>{% empty %}<tr><td colspan="3" class="text-muted">Sin órdenes.</td></tr>{% endfor %}
+        </tbody></table>
+    </div>
+
+    <!-- Repuestos asociados (todos) -->
+    <div class="tab-pane fade" id="repuestos">
+        <table class="table table-sm"><thead><tr><th>Repuesto</th><th>Criticidad</th><th>Stock recomendado</th></tr></thead><tbody>
+        {% for mr in repuestos_criticos %}<tr><td>{{ mr.id_repuesto.nombre_repuesto }}</td><td>{{ mr.get_criticidad_repuesto_display }}</td><td>{{ mr.cantidad_recomendada_stock }}</td></tr>{% empty %}<tr><td colspan="3" class="text-muted">Sin repuestos asociados.</td></tr>{% endfor %}
+        </tbody></table>
+    </div>
+
+    <!-- Energía -->
+    <div class="tab-pane fade" id="energia">
+        <table class="table table-sm"><thead><tr><th>Fecha</th><th>Energía</th><th>kWh</th><th>GLP kg</th><th>Costo total</th></tr></thead><tbody>
+        {% for c in consumos %}<tr><td>{{ c.fecha }}</td><td>{{ c.get_tipo_energia_display }}</td><td>{{ c.kwh_estimado|default:"-" }}</td><td>{{ c.glp_estimado_kg|default:"-" }}</td><td>{{ c.costo_total_energia|default:"-" }}</td></tr>{% empty %}<tr><td colspan="5" class="text-muted">Sin consumos.</td></tr>{% endfor %}
+        </tbody></table>
+    </div>
+
+    <!-- Archivos -->
+    <div class="tab-pane fade" id="archivos">
+        <a href="{% url 'documentos:documento_subir' %}?tipo=MAQUINA&id={{ maquina.pk }}&categoria=FICHA_TECNICA" class="btn btn-sm btn-outline-primary mb-2"><i class="bi bi-upload"></i> Subir archivo</a>
+        <table class="table table-sm"><thead><tr><th>Archivo</th><th>Categoría</th><th>Tipo</th><th></th></tr></thead><tbody>
+        {% for a in archivos %}<tr><td>{{ a.nombre_archivo }}</td><td>{{ a.get_categoria_archivo_display }}</td><td>{{ a.tipo_archivo }}</td><td class="text-end"><a href="{% url 'documentos:documento_descargar' a.pk %}" class="btn btn-sm btn-outline-success"><i class="bi bi-download"></i></a></td></tr>{% empty %}<tr><td colspan="4" class="text-muted">Sin archivos.</td></tr>{% endfor %}
+        </tbody></table>
+    </div>
+
+    <!-- Historial -->
+    <div class="tab-pane fade" id="historial">
+        <table class="table table-sm"><thead><tr><th>Fecha</th><th>Anterior</th><th>Nuevo</th><th>Motivo</th><th>Usuario</th></tr></thead><tbody>
+        {% for h in historial %}<tr><td>{{ h.fecha_hora_cambio|date:"d/m/Y H:i" }}</td><td>{{ h.get_estado_anterior_display|default:"-" }}</td><td>{{ h.get_estado_nuevo_display }}</td><td>{{ h.motivo_cambio|default:"-" }}</td><td>{{ h.id_usuario.nombre_completo }}</td></tr>{% empty %}<tr><td colspan="5" class="text-muted">Sin historial.</td></tr>{% endfor %}
+        </tbody></table>
+    </div>
+</div></div>
+{% endblock %}

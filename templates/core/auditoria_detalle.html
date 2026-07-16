@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Evento de auditoría #{{ evento.pk }}{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3><i class="bi bi-shield-lock"></i> Evento de auditoría #{{ evento.pk }}</h3>
+    <a href="{% url 'core:auditoria_list' %}" class="btn btn-outline-secondary"><i class="bi bi-arrow-left"></i> Volver</a>
+</div>
+
+<div class="card shadow-sm"><div class="card-body">
+<table class="table">
+    <tr><th style="width:220px">Usuario</th><td>{% if evento.id_usuario_id %}{{ evento.id_usuario.nombre_completo }} <span class="text-muted">({{ evento.id_usuario.usuario_login }})</span>{% else %}<span class="text-muted">— (sin usuario / sesión anónima)</span>{% endif %}</td></tr>
+    <tr><th>Acción realizada</th><td><span class="badge bg-{{ evento.badge }}">{{ evento.get_accion_display }}</span></td></tr>
+    <tr><th>Tabla afectada</th><td>{{ evento.tabla_afectada }}</td></tr>
+    <tr><th>ID del registro afectado</th><td>{{ evento.id_registro_afectado|default:"—" }}</td></tr>
+    <tr><th>Fecha y hora</th><td>{{ evento.fecha_hora|date:"d/m/Y H:i:s" }}</td></tr>
+    <tr><th>IP de origen</th><td><code>{{ evento.ip_origen|default:"—" }}</code></td></tr>
+    <tr><th>Descripción</th><td>{{ evento.descripcion|default:"—"|linebreaksbr }}</td></tr>
+</table>
+</div></div>
+{% endblock %}

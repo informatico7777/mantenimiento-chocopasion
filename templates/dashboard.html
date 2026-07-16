@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - {{ APP_NOMBRE }}{% endblock %}
+{% block content %}
+<h3 class="mb-3"><i class="bi bi-speedometer2"></i> Panel de control</h3>
+
+<div class="row g-3 mb-4">
+    {% with t=tarjetas %}
+    <div class="col-6 col-md-3"><div class="card card-tarjeta shadow-sm"><div class="card-body"><div class="text-muted small">Total máquinas</div><div class="display-6">{{ t.total_maquinas }}</div></div></div></div>
+    <div class="col-6 col-md-3"><div class="card card-tarjeta shadow-sm"><div class="card-body"><div class="text-muted small">Operativas</div><div class="display-6 text-success">{{ t.operativas }}</div></div></div></div>
+    <div class="col-6 col-md-3"><div class="card card-tarjeta shadow-sm"><div class="card-body"><div class="text-muted small">Observadas</div><div class="display-6 text-warning">{{ t.observadas }}</div></div></div></div>
+    <div class="col-6 col-md-3"><div class="card card-tarjeta shadow-sm"><div class="card-body"><div class="text-muted small">Paradas</div><div class="display-6 text-secondary">{{ t.paradas }}</div></div></div></div>
+    <div class="col-6 col-md-3"><div class="card card-tarjeta shadow-sm"><div class="card-body"><div class="text-muted small">Mant. preventivo</div><div class="display-6 text-info">{{ t.mant_preventivo }}</div></div></div></div>
+    <div class="col-6 col-md-3"><div class="card card-tarjeta shadow-sm"><div class="card-body"><div class="text-muted small">Mant. correctivo</div><div class="display-6 text-primary">{{ t.mant_correctivo }}</div></div></div></div>
+    <div class="col-6 col-md-3"><div class="card card-tarjeta shadow-sm"><div class="card-body"><div class="text-muted small">Fuera de servicio</div><div class="display-6 text-danger">{{ t.fuera_servicio }}</div></div></div></div>
+    <div class="col-6 col-md-3"><div class="card card-tarjeta shadow-sm"><div class="card-body"><div class="text-muted small">OT pendientes</div><div class="display-6">{{ t.ot_pendientes }}</div></div></div></div>
+    <div class="col-6 col-md-3"><div class="card card-tarjeta shadow-sm"><div class="card-body"><div class="text-muted small">Fallas abiertas</div><div class="display-6 text-danger">{{ t.fallas_abiertas }}</div></div></div></div>
+    <div class="col-6 col-md-3"><div class="card card-tarjeta shadow-sm"><div class="card-body"><div class="text-muted small">Repuestos bajo stock</div><div class="display-6 text-warning">{{ t.repuestos_bajo_stock }}</div></div></div></div>
+    <div class="col-6 col-md-3"><div class="card card-tarjeta shadow-sm"><div class="card-body"><div class="text-muted small">Próx. mantenimientos</div><div class="display-6">{{ t.prox_mantenimientos }}</div></div></div></div>
+    <div class="col-6 col-md-3"><div class="card card-tarjeta shadow-sm"><div class="card-body"><div class="text-muted small">Reportes semanales</div><div class="display-6">{{ t.reportes_semanales }}</div></div></div></div>
+    {% endwith %}
+</div>
+
+{% if planes_vencidos or repuestos_alerta %}
+<div class="row g-3 mb-4">
+    {% if repuestos_alerta %}
+    <div class="col-md-6">
+        <div class="alert alert-warning mb-0"><strong><i class="bi bi-box-seam"></i> Repuestos bajo stock</strong>
+            <ul class="mb-0 mt-1">{% for r in repuestos_alerta %}<li>{{ r.codigo_repuesto }} - {{ r.nombre_repuesto }} (stock {{ r.stock_actual }} / min {{ r.stock_minimo }})</li>{% endfor %}</ul>
+        </div>
+    </div>
+    {% endif %}
+    {% if planes_vencidos %}
+    <div class="col-md-6">
+        <div class="alert alert-danger mb-0"><strong><i class="bi bi-calendar-x"></i> Mantenimientos vencidos</strong>
+            <ul class="mb-0 mt-1">{% for p in planes_vencidos %}<li>{{ p.id_maquina.codigo_activo }} - {{ p.actividad }} (vencía {{ p.fecha_proxima_ejecucion }})</li>{% endfor %}</ul>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endif %}
+
+{% if indicadores_resumen %}
+<div class="card shadow-sm mb-4 border-0" style="background:linear-gradient(135deg,#5a3825,#7a4d30);">
+    <div class="card-body text-white">
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+            <div>
+                <h5 class="mb-1"><i class="bi bi-graph-up-arrow"></i> Indicadores de mantenimiento (últimos 30 días)</h5>
+                <small class="text-warning">{{ indicadores_resumen.periodo_inicio|date:"d/m/Y" }} a {{ indicadores_resumen.periodo_fin|date:"d/m/Y" }}</small>
+            </div>
+            <div class="d-flex gap-4 text-center flex-wrap">
+                <div><div class="h3 mb-0">{{ indicadores_resumen.disponibilidad_promedio }}%</div><small>Disponibilidad</small></div>
+                <div><div class="h3 mb-0">{{ indicadores_resumen.total_fallas }}</div><small>Fallas</small></div>
+                <div><div class="h3 mb-0">S/ {{ indicadores_resumen.costo_total }}</div><small>Costo mant.</small></div>
+                <div><div class="h3 mb-0">{{ indicadores_resumen.horas_parada_total }}</div><small>Horas parada</small></div>
+                <div class="align-self-center"><a href="{% url 'reportes:indicadores' %}" class="btn btn-warning btn-sm">Ver indicadores <i class="bi bi-arrow-right"></i></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<div class="row g-3">
+    <div class="col-lg-6">
+        <div class="card shadow-sm"><div class="card-header bg-white"><i class="bi bi-eye"></i> Últimas observaciones</div>
+            <div class="card-body p-0"><table class="table table-sm mb-0">
+                <thead><tr><th>Fecha</th><th>Máquina</th><th>Tipo</th><th>Nivel</th></tr></thead>
+                <tbody>{% for o in ultimas_observaciones %}<tr><td>{{ o.fecha_hora|date:"d/m H:i" }}</td><td>{{ o.id_maquina.codigo_activo }}</td><td>{{ o.get_tipo_observacion_display }}</td><td><span class="badge bg-{{ o.badge_importancia }}">{{ o.get_nivel_importancia_display }}</span></td></tr>{% empty %}<tr><td colspan="4" class="text-muted">Sin registros.</td></tr>{% endfor %}</tbody>
+            </table></div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card shadow-sm"><div class="card-header bg-white"><i class="bi bi-exclamation-triangle"></i> Últimos reportes de falla</div>
+            <div class="card-body p-0"><table class="table table-sm mb-0">
+                <thead><tr><th>Código</th><th>Máquina</th><th>Urgencia</th><th>Estado</th></tr></thead>
+                <tbody>{% for f in ultimos_reportes_falla %}<tr><td><a href="{% url 'mantenimiento:falla_detalle' f.pk %}">{{ f.codigo_reporte }}</a></td><td>{{ f.id_maquina.codigo_activo }}</td><td>{{ f.get_nivel_urgencia_display }}</td><td><span class="badge bg-{{ f.badge_estado }}">{{ f.get_estado_reporte_display }}</span></td></tr>{% empty %}<tr><td colspan="4" class="text-muted">Sin registros.</td></tr>{% endfor %}</tbody>
+            </table></div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card shadow-sm"><div class="card-header bg-white"><i class="bi bi-tools"></i> Órdenes de trabajo próximas</div>
+            <div class="card-body p-0"><table class="table table-sm mb-0">
+                <thead><tr><th>Código</th><th>Máquina</th><th>Programada</th><th>Estado</th></tr></thead>
+                <tbody>{% for ot in ot_proximas %}<tr><td><a href="{% url 'mantenimiento:ot_detalle' ot.pk %}">{{ ot.codigo_ot }}</a></td><td>{{ ot.id_maquina.codigo_activo }}</td><td>{{ ot.fecha_programada|default:"-" }}</td><td><span class="badge bg-{{ ot.badge_estado }}">{{ ot.get_estado_ot_display }}</span></td></tr>{% empty %}<tr><td colspan="4" class="text-muted">Sin registros.</td></tr>{% endfor %}</tbody>
+            </table></div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card shadow-sm"><div class="card-header bg-white"><i class="bi bi-cpu"></i> Máquinas críticas</div>
+            <div class="card-body p-0"><table class="table table-sm mb-0">
+                <thead><tr><th>Código</th><th>Nombre</th><th>Criticidad</th><th>Estado</th></tr></thead>
+                <tbody>{% for m in maquinas_criticas %}<tr><td><a href="{% url 'core:maquina_detalle' m.pk %}">{{ m.codigo_activo }}</a></td><td>{{ m.nombre_maquina }}</td><td>{{ m.get_criticidad_display }}</td><td><span class="badge bg-{{ m.badge_estado }}">{{ m.get_estado_operativo_display }}</span></td></tr>{% empty %}<tr><td colspan="4" class="text-muted">Sin registros.</td></tr>{% endfor %}</tbody>
+            </table></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

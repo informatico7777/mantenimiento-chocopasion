@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+    @page { size: A4; margin: 1.6cm; }
+    body { font-family: "Helvetica", Arial, sans-serif; font-size: 10px; color: #222; }
+    h1 { font-size: 18px; color: #5a3825; margin: 0; }
+    h2 { font-size: 13px; color: #5a3825; border-bottom: 1px solid #c79a3a; padding-bottom: 3px; margin-top: 18px; }
+    .cab { border-bottom: 2px solid #c79a3a; padding-bottom: 6px; margin-bottom: 10px; }
+    .meta { color: #666; font-size: 9px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 4px; }
+    th, td { border: 1px solid #bbb; padding: 3px 4px; text-align: left; font-size: 8.5px; }
+    th { background: #f0e6d2; }
+    .resumen { background: #f7f7f7; border: 1px solid #ddd; padding: 6px; margin: 8px 0; }
+    .vacio { color: #888; font-style: italic; }
+    .badge-danger { color: #b02a37; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="cab">
+    <h1>{{ titulo }}</h1>
+    <div class="meta">{{ planta }} · Código: {{ reporte.codigo_reporte }}</div>
+    <div class="meta">Periodo: {{ reporte.fecha_inicio }} a {{ reporte.fecha_fin }} · Generado por: {{ generado_por }} · {{ fecha_generacion|date:"d/m/Y H:i" }}</div>
+</div>
+
+<div class="resumen">{{ reporte.resumen }}</div>
+
+<h2>1. Checklists realizados</h2>
+<table>
+<thead><tr><th>Fecha</th><th>Turno</th><th>Máquina</th><th>Resultado</th><th>Producción</th><th>Revisó</th></tr></thead>
+<tbody>
+{% for c in checklists %}
+<tr><td>{{ c.fecha }}</td><td>{{ c.get_turno_display }}</td><td>{{ c.id_maquina.codigo_activo }}</td>
+<td>{{ c.get_resultado_general_display }}</td><td>{{ c.permite_produccion|yesno:"Sí,No" }}</td><td>{{ c.id_usuario.nombre_completo }}</td></tr>
+{% empty %}<tr><td colspan="6" class="vacio">Sin checklists en el periodo.</td></tr>{% endfor %}
+</tbody>
+</table>
+
+<h2>2. Respuestas con incumplimientos</h2>
+<table>
+<thead><tr><th>Fecha</th><th>Máquina</th><th>Pregunta</th><th>Alerta</th><th>Observación</th></tr></thead>
+<tbody>
+{% for d in incumplimientos %}
+<tr><td>{{ d.id_checklist.fecha }}</td><td>{{ d.id_checklist.id_maquina.codigo_activo }}</td>
+<td>{{ d.id_item_checklist.pregunta }}</td><td>{{ d.get_nivel_alerta_display }}</td><td>{{ d.observacion|default:"-" }}</td></tr>
+{% empty %}<tr><td colspan="5" class="vacio">Sin incumplimientos.</td></tr>{% endfor %}
+</tbody>
+</table>
+
+<h2>3. Observaciones registradas</h2>
+<table>
+<thead><tr><th>Fecha</th><th>Máquina</th><th>Tipo</th><th>Nivel</th><th>Descripción</th></tr></thead>
+<tbody>
+{% for o in observaciones %}
+<tr><td>{{ o.fecha_hora|date:"d/m H:i" }}</td><td>{{ o.id_maquina.codigo_activo }}</td><td>{{ o.get_tipo_observacion_display }}</td>
+<td>{{ o.get_nivel_importancia_display }}</td><td>{{ o.descripcion|truncatechars:80 }}</td></tr>
+{% empty %}<tr><td colspan="5" class="vacio">Sin observaciones.</td></tr>{% endfor %}
+</tbody>
+</table>
+
+<h2>4. Fallas e imprevistos</h2>
+<table>
+<thead><tr><th>Código</th><th>Fecha</th><th>Máquina</th><th>Síntoma</th><th>Urgencia</th><th>Estado</th></tr></thead>
+<tbody>
+{% for f in fallas %}
+<tr><td>{{ f.codigo_reporte }}</td><td>{{ f.fecha_reporte|date:"d/m" }}</td><td>{{ f.id_maquina.codigo_activo }}</td>
+<td>{{ f.sintoma|truncatechars:40 }}</td><td>{{ f.get_nivel_urgencia_display }}</td><td>{{ f.get_estado_reporte_display }}</td></tr>
+{% empty %}<tr><td colspan="6" class="vacio">Sin fallas.</td></tr>{% endfor %}
+</tbody>
+</table>
+
+<h2>5. Órdenes de trabajo abiertas</h2>
+<table>
+<thead><tr><th>Código</th><th>Máquina</th><th>Tipo</th><th>Prioridad</th><th>Programada</th><th>Estado</th></tr></thead>
+<tbody>
+{% for ot in ot_abiertas %}
+<tr><td>{{ ot.codigo_ot }}</td><td>{{ ot.id_maquina.codigo_activo }}</td><td>{{ ot.get_tipo_ot_display }}</td>
+<td>{{ ot.get_prioridad_display }}</td><td>{{ ot.fecha_programada|default:"-" }}</td><td>{{ ot.get_estado_ot_display }}</td></tr>
+{% empty %}<tr><td colspan="6" class="vacio">Sin órdenes abiertas.</td></tr>{% endfor %}
+</tbody>
+</table>
+
+<h2>6. Órdenes de trabajo cerradas</h2>
+<table>
+<thead><tr><th>Código</th><th>Máquina</th><th>Tipo</th><th>Costo total</th><th>Cierre</th></tr></thead>
+<tbody>
+{% for ot in ot_cerradas %}
+<tr><td>{{ ot.codigo_ot }}</td><td>{{ ot.id_maquina.codigo_activo }}</td><td>{{ ot.get_tipo_ot_display }}</td>
+<td>S/ {{ ot.costo_total }}</td><td>{{ ot.fecha_fin_real|date:"d/m/Y"|default:"-" }}</td></tr>
+{% empty %}<tr><td colspan="5" class="vacio">Sin órdenes cerradas.</td></tr>{% endfor %}
+</tbody>
+</table>
+
+<h2>7. Repuestos bajo stock</h2>
+<table>
+<thead><tr><th>Código</th><th>Repuesto</th><th>Stock</th><th>Mínimo</th><th>Proveedor</th></tr></thead>
+<tbody>
+{% for r in repuestos_bajo_stock %}
+<tr><td>{{ r.codigo_repuesto }}</td><td>{{ r.nombre_repuesto }}</td><td class="badge-danger">{{ r.stock_actual }}</td>
+<td>{{ r.stock_minimo }}</td><td>{{ r.id_proveedor.nombre_proveedor|default:"-" }}</td></tr>
+{% empty %}<tr><td colspan="5" class="vacio">Todos los repuestos sobre el mínimo.</td></tr>{% endfor %}
+</tbody>
+</table>
+
+<h2>8. Consumo energético del periodo</h2>
+<table>
+<thead><tr><th>Fecha</th><th>Máquina</th><th>Energía</th><th>kWh</th><th>GLP kg</th><th>Costo</th></tr></thead>
+<tbody>
+{% for c in consumos %}
+<tr><td>{{ c.fecha }}</td><td>{{ c.id_maquina.codigo_activo }}</td><td>{{ c.get_tipo_energia_display }}</td>
+<td>{{ c.kwh_estimado|default:"-" }}</td><td>{{ c.glp_estimado_kg|default:"-" }}</td><td>S/ {{ c.costo_total_energia|default:"0" }}</td></tr>
+{% empty %}<tr><td colspan="6" class="vacio">Sin consumos registrados.</td></tr>{% endfor %}
+</tbody>
+</table>
+
+<h2>9. Recomendaciones de mantenimiento preventivo (fin de semana)</h2>
+<ul>
+    <li>Atender las máquinas con checklist OBSERVADA o NO_APTA antes de reiniciar producción.</li>
+    <li>Programar las órdenes de trabajo abiertas de prioridad ALTA/CRÍTICA fuera de turno o fin de semana.</li>
+    <li>Reponer los repuestos bajo stock listados en la sección 7.</li>
+    <li>Revisar las máquinas con observaciones de nivel ALTO/CRÍTICO y mediciones operativas anómalas.</li>
+</ul>
+
+<p class="meta" style="margin-top:20px;">Documento generado automáticamente por el Sistema de Gestión de Mantenimiento — Choco Pasión.</p>
+</body>
+</html>

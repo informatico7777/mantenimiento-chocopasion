@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}{{ falla.codigo_reporte }}{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3><i class="bi bi-exclamation-triangle"></i> {{ falla.codigo_reporte }}</h3>
+    <div>
+        {% if falla.estado_reporte != 'CONVERTIDO_A_OT' and falla.estado_reporte != 'CERRADO' %}
+        <a href="{% url 'mantenimiento:falla_convertir_ot' falla.pk %}" class="btn btn-danger"><i class="bi bi-tools"></i> Convertir en OT</a>
+        {% endif %}
+        <a href="{% url 'documentos:documento_subir' %}?tipo=FALLA&id={{ falla.pk }}&categoria=EVIDENCIA" class="btn btn-outline-primary"><i class="bi bi-upload"></i> Adjuntar evidencia</a>
+    </div>
+</div>
+<div class="card shadow-sm mb-3"><div class="card-body">
+    <div class="row">
+        <div class="col-md-4"><strong>Máquina:</strong> {{ falla.id_maquina.codigo_activo }} — {{ falla.id_maquina.nombre_maquina }}</div>
+        <div class="col-md-3"><strong>Fecha:</strong> {{ falla.fecha_reporte|date:"d/m/Y H:i" }}</div>
+        <div class="col-md-2"><strong>Turno:</strong> {{ falla.get_turno_display }}</div>
+        <div class="col-md-3"><strong>Reportó:</strong> {{ falla.id_usuario_reporta.nombre_completo }}</div>
+    </div><hr>
+    <p><strong>Síntoma:</strong> {{ falla.sintoma }}</p>
+    <p><strong>Descripción:</strong><br>{{ falla.descripcion_falla|linebreaksbr }}</p>
+    <p>
+        <span class="badge bg-{{ falla.badge_estado }}">{{ falla.get_estado_reporte_display }}</span>
+        <span class="badge bg-secondary">Urgencia: {{ falla.get_nivel_urgencia_display }}</span>
+        <span class="badge bg-secondary">Origen: {{ falla.get_origen_reporte_display }}</span>
+        {% if falla.afecta_produccion %}<span class="badge bg-danger">Afecta producción</span>{% endif %}
+    </p>
+</div></div>
+
+<div class="row g-3">
+    <div class="col-md-6"><div class="card shadow-sm"><div class="card-header bg-white">Órdenes de trabajo asociadas</div>
+        <div class="card-body p-0"><table class="table table-sm mb-0"><thead><tr><th>Código</th><th>Tipo</th><th>Estado</th></tr></thead><tbody>
+        {% for ot in ordenes %}<tr><td><a href="{% url 'mantenimiento:ot_detalle' ot.pk %}">{{ ot.codigo_ot }}</a></td><td>{{ ot.get_tipo_ot_display }}</td><td>{{ ot.get_estado_ot_display }}</td></tr>{% empty %}<tr><td colspan="3" class="text-muted">Ninguna.</td></tr>{% endfor %}
+        </tbody></table></div></div>
+    </div>
+    <div class="col-md-6"><div class="card shadow-sm"><div class="card-header bg-white">Evidencias</div>
+        <div class="card-body p-0"><table class="table table-sm mb-0"><thead><tr><th>Archivo</th><th></th></tr></thead><tbody>
+        {% for a in archivos %}<tr><td>{{ a.nombre_archivo }}</td><td class="text-end"><a href="{% url 'documentos:documento_descargar' a.pk %}" class="btn btn-sm btn-outline-success"><i class="bi bi-download"></i></a></td></tr>{% empty %}<tr><td colspan="2" class="text-muted">Sin archivos.</td></tr>{% endfor %}
+        </tbody></table></div></div>
+    </div>
+</div>
+<a href="{% url 'mantenimiento:falla_list' %}" class="btn btn-outline-secondary mt-3">Volver</a>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Eliminar componente{% endblock %}
+{% block content %}
+<h3 class="mb-3 text-danger"><i class="bi bi-trash"></i> Eliminar componente</h3>
+<div class="card shadow-sm"><div class="card-body">
+    <p>¿Confirmas la eliminación del componente
+       <strong>{{ componente.nombre_componente }}</strong>
+       de la máquina <strong>{{ componente.id_maquina.codigo_activo }}</strong>?</p>
+    <p class="text-muted small">Esta acción no se puede deshacer. Las fallas probables asociadas quedarán sin componente vinculado.</p>
+    <form method="post">{% csrf_token %}
+        <button class="btn btn-danger"><i class="bi bi-trash"></i> Sí, eliminar</button>
+        <a href="{% url 'core:componente_detalle' componente.pk %}" class="btn btn-outline-secondary">Cancelar</a>
+    </form>
+</div></div>
+{% endblock %}

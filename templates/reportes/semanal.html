@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Generar reporte{% endblock %}
+{% block content %}
+<h3 class="mb-3"><i class="bi bi-file-earmark-pdf"></i> Generar reporte de mantenimiento</h3>
+<div class="alert alert-info small"><i class="bi bi-info-circle"></i> El reporte semanal incluye: máquinas revisadas, checklists realizados, incumplimientos, observaciones, fallas, órdenes abiertas y cerradas, repuestos usados y bajo stock, consumo energético y recomendaciones de mantenimiento preventivo.</div>
+<div class="card shadow-sm"><div class="card-body">
+<form method="post" novalidate>{% csrf_token %}{% include "_form.html" %}
+    <div class="mt-3">
+        <button class="btn btn-danger"><i class="bi bi-file-earmark-pdf"></i> Generar PDF</button>
+        <a href="{% url 'reportes:reporte_list' %}" class="btn btn-outline-secondary">Cancelar</a>
+    </div>
+</form>
+</div></div>
+{% endblock %}

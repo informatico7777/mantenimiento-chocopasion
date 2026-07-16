@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Documentos{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3><i class="bi bi-paperclip"></i> Archivos adjuntos</h3>
+    <a href="{% url 'documentos:documento_subir' %}" class="btn btn-primary"><i class="bi bi-upload"></i> Subir archivo</a>
+</div>
+<form method="get" class="row g-2 mb-3">
+    <div class="col-md-3"><select name="tipo_entidad" class="form-select"><option value="">Toda entidad</option>{% for v,l in tipos_entidad %}<option value="{{ v }}" {% if f_tipo == v %}selected{% endif %}>{{ l }}</option>{% endfor %}</select></div>
+    <div class="col-md-3"><select name="categoria" class="form-select"><option value="">Toda categoría</option>{% for v,l in categorias %}<option value="{{ v }}" {% if f_categoria == v %}selected{% endif %}>{{ l }}</option>{% endfor %}</select></div>
+    <div class="col-md-2"><button class="btn btn-outline-secondary w-100">Filtrar</button></div>
+</form>
+<div class="card shadow-sm"><div class="card-body p-0">
+<table class="table table-hover mb-0">
+    <thead class="table-light"><tr><th>Archivo</th><th>Entidad</th><th>ID</th><th>Categoría</th><th>Tipo</th><th>Subido</th><th></th></tr></thead>
+    <tbody>
+    {% for a in page_obj %}
+        <tr>
+            <td>{{ a.nombre_archivo }}</td>
+            <td>{{ a.get_tipo_entidad_display }}</td>
+            <td>{{ a.id_entidad }}</td>
+            <td>{{ a.get_categoria_archivo_display }}</td>
+            <td>{{ a.tipo_archivo }}</td>
+            <td>{{ a.fecha_subida|date:"d/m/Y" }}</td>
+            <td class="text-end">{% if a.descargable %}<a href="{% url 'documentos:documento_descargar' a.pk %}" class="btn btn-sm btn-outline-success"><i class="bi bi-download"></i></a>{% endif %}</td>
+        </tr>
+    {% empty %}<tr><td colspan="7" class="text-center text-muted py-3">Sin archivos.</td></tr>{% endfor %}
+    </tbody>
+</table>
+</div></div>
+{% include "_pagination.html" %}
+{% endblock %}

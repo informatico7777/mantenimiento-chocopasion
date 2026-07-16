@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Componentes de máquina{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3><i class="bi bi-nut"></i> Componentes de máquina</h3>
+    {% if PUEDE_GESTIONAR_ACTIVOS %}
+    <a href="{% url 'core:componente_crear' %}" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Nuevo componente</a>
+    {% endif %}
+</div>
+
+<form method="get" class="row g-2 mb-3">
+    <div class="col-md-3"><input type="text" name="q" value="{{ q }}" class="form-control" placeholder="Buscar componente"></div>
+    <div class="col-md-3"><select name="maquina" class="form-select"><option value="">Todas las máquinas</option>{% for m in maquinas %}<option value="{{ m.pk }}" {% if f_maquina == m.pk|stringformat:'s' %}selected{% endif %}>{{ m.codigo_activo }}</option>{% endfor %}</select></div>
+    <div class="col-md-2"><select name="criticidad" class="form-select"><option value="">Criticidad</option>{% for v,l in criticidades %}<option value="{{ v }}" {% if f_criticidad == v %}selected{% endif %}>{{ l }}</option>{% endfor %}</select></div>
+    <div class="col-md-2"><select name="estado" class="form-select"><option value="">Estado</option>{% for v,l in estados %}<option value="{{ v }}" {% if f_estado == v %}selected{% endif %}>{{ l }}</option>{% endfor %}</select></div>
+    <div class="col-md-2"><button class="btn btn-outline-secondary w-100"><i class="bi bi-funnel"></i> Filtrar</button></div>
+</form>
+
+<div class="card shadow-sm"><div class="card-body p-0">
+<table class="table table-hover mb-0 align-middle">
+    <thead class="table-light"><tr><th>Máquina</th><th>Componente</th><th>Tipo</th><th>Criticidad</th><th>Estado</th><th>Lubrica</th><th>Calibra</th><th></th></tr></thead>
+    <tbody>
+    {% for c in page_obj %}
+        <tr class="{% if c.estado_componente == 'DANADO' or c.estado_componente == 'FUERA_DE_SERVICIO' %}table-danger{% endif %}">
+            <td>{{ c.id_maquina.codigo_activo }}</td>
+            <td>{{ c.nombre_componente }}</td>
+            <td>{{ c.get_tipo_componente_display }}</td>
+            <td>{{ c.get_criticidad_componente_display }}</td>
+            <td>{{ c.get_estado_componente_display }}</td>
+            <td>{{ c.requiere_lubricacion|yesno:"Sí,No" }}</td>
+            <td>{{ c.requiere_calibracion|yesno:"Sí,No" }}</td>
+            <td class="text-end">
+                <a href="{% url 'core:componente_detalle' c.pk %}" class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></a>
+                {% if PUEDE_GESTIONAR_ACTIVOS %}
+                <a href="{% url 'core:componente_editar' c.pk %}" class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></a>
+                <a href="{% url 'core:componente_eliminar' c.pk %}" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></a>
+                {% endif %}
+            </td>
+        </tr>
+    {% empty %}
+        <tr><td colspan="8" class="text-center text-muted py-3">No hay componentes registrados.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div></div>
+{% include "_pagination.html" %}
+{% endblock %}

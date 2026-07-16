@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Fallas probables{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3><i class="bi bi-diagram-2"></i> Fallas probables</h3>
+    {% if PUEDE_GESTIONAR_ACTIVOS %}
+    <a href="{% url 'core:falla_probable_crear' %}" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Nueva falla probable</a>
+    {% endif %}
+</div>
+
+<form method="get" class="row g-2 mb-3">
+    <div class="col-md-3"><input type="text" name="q" value="{{ q }}" class="form-control" placeholder="Buscar en la descripción"></div>
+    <div class="col-md-3"><select name="maquina" class="form-select"><option value="">Todas las máquinas</option>{% for m in maquinas %}<option value="{{ m.pk }}" {% if f_maquina == m.pk|stringformat:'s' %}selected{% endif %}>{{ m.codigo_activo }}</option>{% endfor %}</select></div>
+    <div class="col-md-2"><select name="riesgo" class="form-select"><option value="">Nivel de riesgo</option>{% for v,l in riesgos %}<option value="{{ v }}" {% if f_riesgo == v %}selected{% endif %}>{{ l }}</option>{% endfor %}</select></div>
+    <div class="col-md-2"><select name="estado" class="form-select"><option value="">Estado</option>{% for v,l in estados %}<option value="{{ v }}" {% if f_estado == v %}selected{% endif %}>{{ l }}</option>{% endfor %}</select></div>
+    <div class="col-md-2"><button class="btn btn-outline-secondary w-100"><i class="bi bi-funnel"></i> Filtrar</button></div>
+</form>
+
+<div class="card shadow-sm"><div class="card-body p-0">
+<table class="table table-hover mb-0 align-middle">
+    <thead class="table-light"><tr><th>Máquina</th><th>Componente</th><th>Descripción</th><th>Prob.</th><th>Sev.</th><th>Det.</th><th>Riesgo</th><th>Estado</th><th></th></tr></thead>
+    <tbody>
+    {% for f in page_obj %}
+        <tr class="{% if f.nivel_riesgo == 'ALTO' or f.nivel_riesgo == 'CRITICO' %}table-warning{% endif %}">
+            <td>{{ f.id_maquina.codigo_activo }}</td>
+            <td>{{ f.id_componente.nombre_componente|default:"—" }}</td>
+            <td>{{ f.descripcion_falla|truncatechars:45 }}</td>
+            <td>{{ f.get_nivel_probabilidad_display }}</td>
+            <td>{{ f.severidad|default:"—" }}</td>
+            <td>{{ f.detectabilidad|default:"—" }}</td>
+            <td><span class="badge bg-{% if f.nivel_riesgo == 'CRITICO' %}danger{% elif f.nivel_riesgo == 'ALTO' %}warning{% elif f.nivel_riesgo == 'MEDIO' %}info{% else %}secondary{% endif %}">{{ f.get_nivel_riesgo_display }}</span></td>
+            <td>{{ f.get_estado_display }}</td>
+            <td class="text-end">
+                <a href="{% url 'core:falla_probable_detalle' f.pk %}" class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></a>
+                {% if PUEDE_GESTIONAR_ACTIVOS %}
+                <a href="{% url 'core:falla_probable_editar' f.pk %}" class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></a>
+                <a href="{% url 'core:falla_probable_eliminar' f.pk %}" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></a>
+                {% endif %}
+            </td>
+        </tr>
+    {% empty %}
+        <tr><td colspan="9" class="text-center text-muted py-3">No hay fallas probables registradas.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div></div>
+{% include "_pagination.html" %}
+{% endblock %}

@@ -1,0 +1,28 @@
+# Entorno y secretos
+.env
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Django
+*.log
+staticfiles/
+
+# Media generada (conservar las carpetas, ignorar el contenido subido)
+media/maquinas/*
+media/fichas_tecnicas/*
+media/placas/*
+media/manuales/*
+media/evidencias/*
+media/reportes_pdf/*
+!media/**/.gitkeep
+
+# IDE / SO
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

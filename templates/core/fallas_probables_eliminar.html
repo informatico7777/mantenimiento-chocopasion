@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Eliminar falla probable{% endblock %}
+{% block content %}
+<h3 class="mb-3 text-danger"><i class="bi bi-trash"></i> Eliminar falla probable</h3>
+<div class="card shadow-sm"><div class="card-body">
+    <p>¿Confirmas la eliminación de la falla probable de la máquina
+       <strong>{{ falla.id_maquina.codigo_activo }}</strong>?</p>
+    <p class="text-muted">{{ falla.descripcion_falla|truncatechars:120 }}</p>
+    <p class="text-muted small">Esta acción no se puede deshacer.</p>
+    <form method="post">{% csrf_token %}
+        <button class="btn btn-danger"><i class="bi bi-trash"></i> Sí, eliminar</button>
+        <a href="{% url 'core:falla_probable_detalle' falla.pk %}" class="btn btn-outline-secondary">Cancelar</a>
+    </form>
+</div></div>
+{% endblock %}

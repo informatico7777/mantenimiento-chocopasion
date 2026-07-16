@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Iniciar sesión - {{ APP_NOMBRE }}{% endblock %}
+{% block content_anon %}
+<div class="login-wrapper">
+    <div class="card login-card shadow">
+        <div class="card-body p-4">
+            <div class="text-center mb-3">
+                <i class="bi bi-gear-wide-connected display-5 text-warning"></i>
+                <h4 class="mt-2 mb-0">Choco Pasión</h4>
+                <small class="text-muted">Gestión de Mantenimiento</small>
+            </div>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} py-2">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+            <form method="post" novalidate>
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label class="form-label">{{ form.usuario_login.label }}</label>
+                    {{ form.usuario_login }}
+                    {% for e in form.usuario_login.errors %}<div class="text-danger small">{{ e }}</div>{% endfor %}
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">{{ form.password.label }}</label>
+                    {{ form.password }}
+                    {% for e in form.password.errors %}<div class="text-danger small">{{ e }}</div>{% endfor %}
+                </div>
+                <button type="submit" class="btn btn-warning w-100"><i class="bi bi-box-arrow-in-right"></i> Ingresar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

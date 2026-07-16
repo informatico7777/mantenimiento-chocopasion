@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Repuestos críticos - {{ maquina.codigo_activo }}{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3><i class="bi bi-box-seam"></i> Repuestos críticos — {{ maquina.codigo_activo }}</h3>
+    <div>
+        {% if PUEDE_GESTIONAR_ACTIVOS %}
+        <a href="{% url 'core:repuesto_critico_agregar' maquina.pk %}" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Asociar repuesto</a>
+        {% endif %}
+        <a href="{% url 'core:maquina_detalle' maquina.pk %}" class="btn btn-outline-secondary"><i class="bi bi-arrow-left"></i> Volver a la máquina</a>
+    </div>
+</div>
+
+{% if hay_stock_bajo %}
+<div class="alert alert-danger"><i class="bi bi-exclamation-octagon"></i> <strong>Atención:</strong> hay repuestos críticos con stock por debajo del mínimo.</div>
+{% endif %}
+
+<div class="card shadow-sm"><div class="card-body p-0">
+<table class="table table-hover mb-0 align-middle">
+    <thead class="table-light"><tr><th>Repuesto</th><th>Stock actual</th><th>Stock mínimo</th><th>Criticidad</th><th>Reposición</th><th>Estado de stock</th><th></th></tr></thead>
+    <tbody>
+    {% for it in items %}
+        <tr class="{% if it.stock_bajo %}table-danger{% endif %}">
+            <td>{{ it.id_repuesto.codigo_repuesto }} — {{ it.id_repuesto.nombre_repuesto }}</td>
+            <td>{{ it.id_repuesto.stock_actual }} {{ it.id_repuesto.unidad_medida }}</td>
+            <td>{{ it.id_repuesto.stock_minimo }}</td>
+            <td>{{ it.get_criticidad_repuesto_display }}</td>
+            <td>{{ it.tiempo_reposicion_dias|default:"—" }} días</td>
+            <td>{% if it.stock_bajo %}<span class="badge bg-danger">STOCK BAJO</span>{% else %}<span class="badge bg-success">OK</span>{% endif %}</td>
+            <td class="text-end">
+                {% if PUEDE_GESTIONAR_ACTIVOS %}
+                <a href="{% url 'core:repuesto_critico_editar' maquina.pk it.pk %}" class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></a>
+                <a href="{% url 'core:repuesto_critico_eliminar' maquina.pk it.pk %}" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></a>
+                {% endif %}
+            </td>
+        </tr>
+    {% empty %}
+        <tr><td colspan="7" class="text-center text-muted py-3">Esta máquina no tiene repuestos críticos asociados.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div></div>
+{% endblock %}

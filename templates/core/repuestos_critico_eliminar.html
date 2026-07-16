@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Quitar repuesto crítico{% endblock %}
+{% block content %}
+<h3 class="mb-3 text-danger"><i class="bi bi-trash"></i> Quitar repuesto crítico</h3>
+<div class="card shadow-sm"><div class="card-body">
+    <p>¿Confirmas desvincular el repuesto
+       <strong>{{ rel.id_repuesto.codigo_repuesto }} — {{ rel.id_repuesto.nombre_repuesto }}</strong>
+       de la máquina <strong>{{ maquina.codigo_activo }}</strong>?</p>
+    <p class="text-muted small">Esto solo elimina la relación en maquina_repuesto; el repuesto y su stock no se modifican.</p>
+    <form method="post">{% csrf_token %}
+        <button class="btn btn-danger"><i class="bi bi-trash"></i> Sí, quitar</button>
+        <a href="{% url 'core:repuestos_criticos_list' maquina.pk %}" class="btn btn-outline-secondary">Cancelar</a>
+    </form>
+</div></div>
+{% endblock %}

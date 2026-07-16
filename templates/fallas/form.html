@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}{{ titulo }}{% endblock %}
+{% block content %}
+<h3 class="mb-3"><i class="bi bi-exclamation-triangle"></i> {{ titulo }}</h3>
+<div class="card shadow-sm"><div class="card-body">
+<form method="post" novalidate>{% csrf_token %}{% include "_form.html" %}
+    <div class="mt-3"><button class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+    <a href="{% url 'mantenimiento:falla_list' %}" class="btn btn-outline-secondary">Cancelar</a></div>
+</form>
+</div></div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Máquinas - {{ APP_NOMBRE }}{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3><i class="bi bi-cpu"></i> Máquinas</h3>
+    <a href="{% url 'core:maquina_crear' %}" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Nueva máquina</a>
+</div>
+
+<form method="get" class="row g-2 mb-3">
+    <div class="col-md-3"><input type="text" name="q" value="{{ q }}" class="form-control" placeholder="Buscar código o nombre"></div>
+    <div class="col-md-3"><select name="area" class="form-select"><option value="">Todas las áreas</option>{% for a in areas %}<option value="{{ a.pk }}" {% if f_area == a.pk|stringformat:'s' %}selected{% endif %}>{{ a.nombre_area }}</option>{% endfor %}</select></div>
+    <div class="col-md-2"><select name="criticidad" class="form-select"><option value="">Criticidad</option>{% for v,l in criticidades %}<option value="{{ v }}" {% if f_criticidad == v %}selected{% endif %}>{{ l }}</option>{% endfor %}</select></div>
+    <div class="col-md-2"><select name="estado" class="form-select"><option value="">Estado</option>{% for v,l in estados %}<option value="{{ v }}" {% if f_estado == v %}selected{% endif %}>{{ l }}</option>{% endfor %}</select></div>
+    <div class="col-md-2"><button class="btn btn-outline-secondary w-100"><i class="bi bi-funnel"></i> Filtrar</button></div>
+</form>
+
+<div class="card shadow-sm"><div class="card-body p-0">
+<table class="table table-hover mb-0">
+    <thead class="table-light"><tr><th>Código</th><th>Nombre</th><th>Área</th><th>Tipo energía</th><th>Criticidad</th><th>Estado</th><th></th></tr></thead>
+    <tbody>
+    {% for m in page_obj %}
+        <tr>
+            <td>{{ m.codigo_activo }}</td>
+            <td>{{ m.nombre_maquina }}</td>
+            <td>{{ m.id_area.nombre_area }}</td>
+            <td>{{ m.get_tipo_energia_display }}</td>
+            <td>{{ m.get_criticidad_display }}</td>
+            <td><span class="badge bg-{{ m.badge_estado }}">{{ m.get_estado_operativo_display }}</span></td>
+            <td class="text-end">
+                <a href="{% url 'core:maquina_detalle' m.pk %}" class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></a>
+                <a href="{% url 'core:maquina_editar' m.pk %}" class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></a>
+            </td>
+        </tr>
+    {% empty %}
+        <tr><td colspan="7" class="text-center text-muted py-3">No hay máquinas registradas.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div></div>
+{% include "_pagination.html" %}
+{% endblock %}

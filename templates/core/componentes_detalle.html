@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}{{ componente.nombre_componente }}{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3><i class="bi bi-nut"></i> {{ componente.nombre_componente }}</h3>
+    <div>
+        {% if PUEDE_GESTIONAR_ACTIVOS %}
+        <a href="{% url 'core:componente_editar' componente.pk %}" class="btn btn-outline-secondary"><i class="bi bi-pencil"></i> Editar</a>
+        <a href="{% url 'core:componente_eliminar' componente.pk %}" class="btn btn-outline-danger"><i class="bi bi-trash"></i> Eliminar</a>
+        {% endif %}
+        <a href="{% url 'core:maquina_detalle' componente.id_maquina.pk %}" class="btn btn-outline-primary"><i class="bi bi-cpu"></i> Ver máquina</a>
+    </div>
+</div>
+
+{% if componente.estado_componente == 'DANADO' or componente.estado_componente == 'FUERA_DE_SERVICIO' %}
+<div class="alert alert-danger"><i class="bi bi-exclamation-octagon"></i> Este componente está <strong>{{ componente.get_estado_componente_display }}</strong>.</div>
+{% endif %}
+
+<div class="card shadow-sm mb-3"><div class="card-body"><div class="row">
+    <div class="col-md-6"><table class="table table-sm">
+        <tr><th style="width:200px">Máquina</th><td>{{ componente.id_maquina.codigo_activo }} — {{ componente.id_maquina.nombre_maquina }}</td></tr>
+        <tr><th>Tipo</th><td>{{ componente.get_tipo_componente_display }}</td></tr>
+        <tr><th>Criticidad</th><td>{{ componente.get_criticidad_componente_display }}</td></tr>
+        <tr><th>Estado</th><td>{{ componente.get_estado_componente_display }}</td></tr>
+    </table></div>
+    <div class="col-md-6"><table class="table table-sm">
+        <tr><th style="width:200px">Vida útil estimada</th><td>{{ componente.vida_util_estimada_horas|default:"—" }} h</td></tr>
+        <tr><th>Requiere lubricación</th><td>{{ componente.requiere_lubricacion|yesno:"Sí,No" }}</td></tr>
+        <tr><th>Requiere calibración</th><td>{{ componente.requiere_calibracion|yesno:"Sí,No" }}</td></tr>
+    </table></div>
+</div>
+{% if componente.descripcion %}<p class="mb-0"><strong>Descripción:</strong> {{ componente.descripcion }}</p>{% endif %}
+</div></div>
+
+{% if PUEDE_GESTIONAR_ACTIVOS %}
+<div class="card shadow-sm mb-3"><div class="card-body">
+    <form method="post" action="{% url 'core:componente_cambiar_estado' componente.pk %}" class="row g-2 align-items-end">
+        {% csrf_token %}
+        <div class="col-md-4">
+            <label class="form-label small mb-0">Cambiar estado del componente</label>
+            <select name="estado_componente" class="form-select">
+                {% for v,l in componente.ESTADO_COMPONENTE %}<option value="{{ v }}" {% if componente.estado_componente == v %}selected{% endif %}>{{ l }}</option>{% endfor %}
+            </select>
+        </div>
+        <div class="col-md-3"><button class="btn btn-dark"><i class="bi bi-arrow-repeat"></i> Actualizar estado</button></div>
+    </form>
+</div></div>
+{% endif %}
+
+<div class="card shadow-sm"><div class="card-header bg-white"><i class="bi bi-diagram-2"></i> Fallas probables asociadas</div>
+<div class="card-body p-0"><table class="table table-sm mb-0">
+    <thead class="table-light"><tr><th>Descripción</th><th>Riesgo</th><th>Estado</th><th></th></tr></thead>
+    <tbody>
+    {% for f in fallas %}
+        <tr><td>{{ f.descripcion_falla|truncatechars:60 }}</td><td>{{ f.get_nivel_riesgo_display }}</td><td>{{ f.get_estado_display }}</td><td class="text-end"><a href="{% url 'core:falla_probable_detalle' f.pk %}" class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></a></td></tr>
+    {% empty %}
+        <tr><td colspan="4" class="text-muted">Sin fallas probables asociadas a este componente.</td></tr>
+    {% endfor %}
+    </tbody>
+</table></div></div>
+{% endblock %}

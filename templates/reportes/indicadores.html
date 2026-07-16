@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}Indicadores de mantenimiento{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3><i class="bi bi-graph-up-arrow"></i> Indicadores de mantenimiento</h3>
+    <div>
+        <a href="{% url 'reportes:indicador_exportar_pdf' %}?{{ querystring }}" class="btn btn-outline-danger"><i class="bi bi-file-earmark-pdf"></i> PDF</a>
+        <a href="{% url 'reportes:indicador_exportar_excel' %}?{{ querystring }}" class="btn btn-outline-success"><i class="bi bi-file-earmark-excel"></i> Excel</a>
+    </div>
+</div>
+
+<!-- Filtros -->
+<form method="get" class="card shadow-sm mb-3"><div class="card-body row g-2 align-items-end">
+    <div class="col-md-2"><label class="form-label small mb-0">Fecha inicio</label><input type="date" name="fecha_inicio" value="{{ filtros.fecha_inicio|date:'Y-m-d' }}" class="form-control form-control-sm"></div>
+    <div class="col-md-2"><label class="form-label small mb-0">Fecha fin</label><input type="date" name="fecha_fin" value="{{ filtros.fecha_fin|date:'Y-m-d' }}" class="form-control form-control-sm"></div>
+    <div class="col-md-2"><label class="form-label small mb-0">Área</label><select name="area" class="form-select form-select-sm"><option value="">Todas</option>{% for a in areas %}<option value="{{ a.pk }}" {% if filtros.area == a.pk|stringformat:'s' %}selected{% endif %}>{{ a.nombre_area }}</option>{% endfor %}</select></div>
+    <div class="col-md-2"><label class="form-label small mb-0">Criticidad</label><select name="criticidad" class="form-select form-select-sm"><option value="">Todas</option>{% for v,l in criticidades %}<option value="{{ v }}" {% if filtros.criticidad == v %}selected{% endif %}>{{ l }}</option>{% endfor %}</select></div>
+    <div class="col-md-2"><label class="form-label small mb-0">Estado</label><select name="estado" class="form-select form-select-sm"><option value="">Todos</option>{% for v,l in estados %}<option value="{{ v }}" {% if filtros.estado == v %}selected{% endif %}>{{ l }}</option>{% endfor %}</select></div>
+    <div class="col-md-1"><label class="form-label small mb-0">Jornada (h)</label><input type="number" step="0.5" name="horas_jornada" value="{{ filtros.horas_jornada }}" class="form-control form-control-sm"></div>
+    <div class="col-md-1"><button class="btn btn-primary btn-sm w-100"><i class="bi bi-funnel"></i></button></div>
+</div></form>
+
+<!-- Tarjetas resumen -->
+<div class="row g-3 mb-3">
+    {% with s=resumen %}
+    <div class="col-6 col-md-3"><div class="card card-tarjeta shadow-sm"><div class="card-body"><div class="text-muted small">Disponibilidad promedio</div><div class="h3 mb-0 text-success">{{ s.disponibilidad_promedio }}%</div></div></div></div>
+    <div class="col-6 col-md-3"><div class="card card-tarjeta shadow-sm"><div class="card-body"><div class="text-muted small">Total de fallas</div><div class="h3 mb-0 text-danger">{{ s.total_fallas }}</div></div></div></div>
+    <div class="col-6 col-md-3"><div class="card card-tarjeta shadow-sm"><div class="card-body"><div class="text-muted small">Costo de mantenimiento</div><div class="h3 mb-0">S/ {{ s.costo_total }}</div></div></div></div>
+    <div class="col-6 col-md-3"><div class="card card-tarjeta shadow-sm"><div class="card-body"><div class="text-muted small">Horas de parada</div><div class="h3 mb-0 text-warning">{{ s.horas_parada_total }}</div></div></div></div>
+    <div class="col-6 col-md-3"><div class="card card-tarjeta shadow-sm"><div class="card-body"><div class="text-muted small">MTBF promedio</div><div class="h4 mb-0">{{ s.mtbf_promedio|default:"—" }} h</div></div></div></div>
+    <div class="col-6 col-md-3"><div class="card card-tarjeta shadow-sm"><div class="card-body"><div class="text-muted small">MTTR promedio</div><div class="h4 mb-0">{{ s.mttr_promedio|default:"—" }} h</div></div></div></div>
+    <div class="col-6 col-md-3"><div class="card card-tarjeta shadow-sm"><div class="card-body"><div class="text-muted small">Consumo total</div><div class="h4 mb-0">{{ s.consumo_total_kwh }} kWh</div></div></div></div>
+    <div class="col-6 col-md-3"><div class="card card-tarjeta shadow-sm"><div class="card-body"><div class="text-muted small">Máquinas analizadas</div><div class="h4 mb-0">{{ s.n_maquinas }}</div></div></div></div>
+    {% endwith %}
+</div>
+
+<form method="post" action="{% url 'reportes:indicador_calcular' %}?{{ querystring }}" class="mb-3">
+    {% csrf_token %}
+    <button class="btn btn-dark"><i class="bi bi-save"></i> Calcular y guardar en indicadores_mantenimiento</button>
+    <span class="text-muted small ms-2">Persiste los valores del periodo y filtros actuales (clave única por máquina + periodo).</span>
+</form>
+
+<!-- Tabla comparativa -->
+<div class="card shadow-sm mb-4"><div class="card-header bg-white"><i class="bi bi-table"></i> Tabla comparativa por máquina ({{ filtros.fecha_inicio|date:'d/m/Y' }} a {{ filtros.fecha_fin|date:'d/m/Y' }})</div>
+<div class="card-body p-0"><div class="table-responsive">
+<table class="table table-sm table-hover mb-0 align-middle">
+    <thead class="table-light"><tr>
+        <th>Código</th><th>Máquina</th><th>Área</th><th class="text-end">Disp. %</th>
+        <th class="text-end">Fallas</th><th class="text-end">MTBF</th><th class="text-end">MTTR</th>
+        <th class="text-end">Cumpl. prev.</th><th class="text-end">Costo S/</th>
+        <th class="text-end">Parada h</th><th class="text-end">kWh</th><th></th>
+    </tr></thead>
+    <tbody>
+    {% for r in resultados %}
+        <tr>
+            <td>{{ r.maquina.codigo_activo }}</td>
+            <td>{{ r.maquina.nombre_maquina|truncatechars:28 }}</td>
+            <td>{{ r.maquina.id_area.nombre_area }}</td>
+            <td class="text-end"><span class="badge bg-{% if r.disponibilidad >= 90 %}success{% elif r.disponibilidad >= 70 %}warning{% else %}danger{% endif %}">{{ r.disponibilidad }}%</span></td>
+            <td class="text-end">{{ r.numero_fallas }}</td>
+            <td class="text-end">{{ r.mtbf|default:"—" }}</td>
+            <td class="text-end">{{ r.mttr|default:"—" }}</td>
+            <td class="text-end">{% if r.cumplimiento_preventivo is not None %}{{ r.cumplimiento_preventivo }}%{% else %}—{% endif %}</td>
+            <td class="text-end">{{ r.costo_total }}</td>
+            <td class="text-end">{{ r.horas_parada }}</td>
+            <td class="text-end">{{ r.consumo_kwh }}</td>
+            <td class="text-end"><a href="{% url 'reportes:indicador_maquina_detalle' r.maquina.pk %}?{{ querystring }}" class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></a></td>
+        </tr>
+    {% empty %}
+        <tr><td colspan="12" class="text-center text-muted py-3">No hay máquinas para los filtros seleccionados.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div></div></div>
+
+<!-- Rankings -->
+<div class="row g-3">
+    <div class="col-lg-6"><div class="card shadow-sm"><div class="card-header bg-white text-danger"><i class="bi bi-arrow-down-circle"></i> Peor disponibilidad</div>
+        <div class="card-body p-0"><table class="table table-sm mb-0"><tbody>
+        {% for r in rankings.peor_disponibilidad %}<tr><td>{{ r.maquina.codigo_activo }}</td><td>{{ r.maquina.nombre_maquina|truncatechars:30 }}</td><td class="text-end"><strong>{{ r.disponibilidad }}%</strong></td></tr>{% empty %}<tr><td class="text-muted">Sin datos.</td></tr>{% endfor %}
+        </tbody></table></div></div></div>
+
+    <div class="col-lg-6"><div class="card shadow-sm"><div class="card-header bg-white text-danger"><i class="bi bi-exclamation-octagon"></i> Mayor número de fallas</div>
+        <div class="card-body p-0"><table class="table table-sm mb-0"><tbody>
+        {% for r in rankings.mas_fallas %}<tr><td>{{ r.maquina.codigo_activo }}</td><td>{{ r.maquina.nombre_maquina|truncatechars:30 }}</td><td class="text-end"><strong>{{ r.numero_fallas }}</strong></td></tr>{% empty %}<tr><td class="text-muted">Sin datos.</td></tr>{% endfor %}
+        </tbody></table></div></div></div>
+
+    <div class="col-lg-6"><div class="card shadow-sm"><div class="card-header bg-white text-primary"><i class="bi bi-cash-coin"></i> Mayor costo de mantenimiento</div>
+        <div class="card-body p-0"><table class="table table-sm mb-0"><tbody>
+        {% for r in rankings.mayor_costo %}<tr><td>{{ r.maquina.codigo_activo }}</td><td>{{ r.maquina.nombre_maquina|truncatechars:30 }}</td><td class="text-end"><strong>S/ {{ r.costo_total }}</strong></td></tr>{% empty %}<tr><td class="text-muted">Sin datos.</td></tr>{% endfor %}
+        </tbody></table></div></div></div>
+
+    <div class="col-lg-6"><div class="card shadow-sm"><div class="card-header bg-white text-warning"><i class="bi bi-stopwatch"></i> Mayor tiempo de parada</div>
+        <div class="card-body p-0"><table class="table table-sm mb-0"><tbody>
+        {% for r in rankings.mayor_parada %}<tr><td>{{ r.maquina.codigo_activo }}</td><td>{{ r.maquina.nombre_maquina|truncatechars:30 }}</td><td class="text-end"><strong>{{ r.horas_parada }} h</strong></td></tr>{% empty %}<tr><td class="text-muted">Sin datos.</td></tr>{% endfor %}
+        </tbody></table></div></div></div>
+</div>
+{% endblock %}

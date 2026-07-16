@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Checklists - {{ APP_NOMBRE }}{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3><i class="bi bi-clipboard-check"></i> Checklists ejecutados</h3>
+    <a href="{% url 'mantenimiento:checklist_plantillas' %}" class="btn btn-outline-primary"><i class="bi bi-list-check"></i> Plantillas</a>
+</div>
+<form method="get" class="row g-2 mb-3">
+    <div class="col-md-3"><select name="maquina" class="form-select"><option value="">Todas las máquinas</option>{% for m in maquinas %}<option value="{{ m.pk }}" {% if f_maquina == m.pk|stringformat:'s' %}selected{% endif %}>{{ m.codigo_activo }}</option>{% endfor %}</select></div>
+    <div class="col-md-2"><select name="resultado" class="form-select"><option value="">Resultado</option><option value="APTA" {% if f_resultado == 'APTA' %}selected{% endif %}>Apta</option><option value="OBSERVADA" {% if f_resultado == 'OBSERVADA' %}selected{% endif %}>Observada</option><option value="NO_APTA" {% if f_resultado == 'NO_APTA' %}selected{% endif %}>No apta</option></select></div>
+    <div class="col-md-2"><input type="date" name="fecha" value="{{ f_fecha }}" class="form-control"></div>
+    <div class="col-md-2"><button class="btn btn-outline-secondary w-100">Filtrar</button></div>
+</form>
+<div class="card shadow-sm"><div class="card-body p-0">
+<table class="table table-hover mb-0">
+    <thead class="table-light"><tr><th>Fecha</th><th>Máquina</th><th>Turno</th><th>Resultado</th><th>Producción</th><th>Revisó</th><th></th></tr></thead>
+    <tbody>
+    {% for c in page_obj %}
+        <tr>
+            <td>{{ c.fecha }}</td>
+            <td>{{ c.id_maquina.codigo_activo }}</td>
+            <td>{{ c.get_turno_display }}</td>
+            <td><span class="badge bg-{{ c.badge_resultado }}">{{ c.get_resultado_general_display }}</span></td>
+            <td>{% if c.permite_produccion %}<span class="text-success">Sí</span>{% else %}<span class="text-danger">No</span>{% endif %}</td>
+            <td>{{ c.id_usuario.nombre_completo }}</td>
+            <td class="text-end"><a href="{% url 'mantenimiento:checklist_detalle' c.pk %}" class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></a></td>
+        </tr>
+    {% empty %}<tr><td colspan="7" class="text-center text-muted py-3">Sin checklists.</td></tr>{% endfor %}
+    </tbody>
+</table>
+</div></div>
+{% include "_pagination.html" %}
+{% endblock %}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+    @page { size: A4 landscape; margin: 1.4cm; }
+    body { font-family: Helvetica, Arial, sans-serif; font-size: 9px; color: #222; }
+    h1 { font-size: 17px; color: #5a3825; margin: 0; }
+    h2 { font-size: 12px; color: #5a3825; border-bottom: 1px solid #c79a3a; padding-bottom: 3px; margin-top: 14px; }
+    .cab { border-bottom: 2px solid #c79a3a; padding-bottom: 6px; margin-bottom: 8px; }
+    .meta { color: #666; font-size: 8px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 4px; }
+    th, td { border: 1px solid #bbb; padding: 3px 4px; font-size: 8px; }
+    th { background: #f0e6d2; }
+    td.num, th.num { text-align: right; }
+    .resumen span { display: inline-block; margin-right: 14px; }
+    .vacio { color: #888; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="cab">
+    <h1>Indicadores de Mantenimiento</h1>
+    <div class="meta">{{ planta }} · Periodo: {{ filtros.fecha_inicio }} a {{ filtros.fecha_fin }} · Jornada: {{ filtros.horas_jornada }} h/día · Generado: {{ fecha_generacion|date:"d/m/Y H:i" }}</div>
+</div>
+
+<div class="resumen">
+    <span><strong>Disponibilidad prom.:</strong> {{ resumen.disponibilidad_promedio }}%</span>
+    <span><strong>Total fallas:</strong> {{ resumen.total_fallas }}</span>
+    <span><strong>Costo total:</strong> S/ {{ resumen.costo_total }}</span>
+    <span><strong>Parada total:</strong> {{ resumen.horas_parada_total }} h</span>
+    <span><strong>MTBF prom.:</strong> {{ resumen.mtbf_promedio|default:"—" }} h</span>
+    <span><strong>MTTR prom.:</strong> {{ resumen.mttr_promedio|default:"—" }} h</span>
+    <span><strong>Consumo:</strong> {{ resumen.consumo_total_kwh }} kWh</span>
+</div>
+
+<h2>Tabla comparativa por máquina</h2>
+<table>
+<thead><tr>
+    <th>Código</th><th>Máquina</th><th>Área</th><th class="num">Disp.%</th>
+    <th class="num">Fallas</th><th class="num">MTBF</th><th class="num">MTTR</th>
+    <th class="num">Cumpl.%</th><th class="num">Costo S/</th><th class="num">Parada h</th><th class="num">kWh</th>
+</tr></thead>
+<tbody>
+{% for r in resultados %}
+<tr>
+    <td>{{ r.maquina.codigo_activo }}</td>
+    <td>{{ r.maquina.nombre_maquina }}</td>
+    <td>{{ r.maquina.id_area.nombre_area }}</td>
+    <td class="num">{{ r.disponibilidad }}</td>
+    <td class="num">{{ r.numero_fallas }}</td>
+    <td class="num">{{ r.mtbf|default:"—" }}</td>
+    <td class="num">{{ r.mttr|default:"—" }}</td>
+    <td class="num">{% if r.cumplimiento_preventivo is not None %}{{ r.cumplimiento_preventivo }}{% else %}—{% endif %}</td>
+    <td class="num">{{ r.costo_total }}</td>
+    <td class="num">{{ r.horas_parada }}</td>
+    <td class="num">{{ r.consumo_kwh }}</td>
+</tr>
+{% empty %}
+<tr><td colspan="11" class="vacio">Sin máquinas para los filtros seleccionados.</td></tr>
+{% endfor %}
+</tbody>
+</table>
+
+<h2>Peor disponibilidad</h2>
+<table><thead><tr><th>Código</th><th>Máquina</th><th class="num">Disponibilidad</th></tr></thead><tbody>
+{% for r in rankings.peor_disponibilidad %}<tr><td>{{ r.maquina.codigo_activo }}</td><td>{{ r.maquina.nombre_maquina }}</td><td class="num">{{ r.disponibilidad }}%</td></tr>{% empty %}<tr><td colspan="3" class="vacio">Sin datos.</td></tr>{% endfor %}
+</tbody></table>
+
+<h2>Mayor número de fallas</h2>
+<table><thead><tr><th>Código</th><th>Máquina</th><th class="num">Fallas</th></tr></thead><tbody>
+{% for r in rankings.mas_fallas %}<tr><td>{{ r.maquina.codigo_activo }}</td><td>{{ r.maquina.nombre_maquina }}</td><td class="num">{{ r.numero_fallas }}</td></tr>{% empty %}<tr><td colspan="3" class="vacio">Sin datos.</td></tr>{% endfor %}
+</tbody></table>
+
+<h2>Mayor costo de mantenimiento</h2>
+<table><thead><tr><th>Código</th><th>Máquina</th><th class="num">Costo S/</th></tr></thead><tbody>
+{% for r in rankings.mayor_costo %}<tr><td>{{ r.maquina.codigo_activo }}</td><td>{{ r.maquina.nombre_maquina }}</td><td class="num">{{ r.costo_total }}</td></tr>{% empty %}<tr><td colspan="3" class="vacio">Sin datos.</td></tr>{% endfor %}
+</tbody></table>
+
+<h2>Mayor tiempo de parada</h2>
+<table><thead><tr><th>Código</th><th>Máquina</th><th class="num">Parada h</th></tr></thead><tbody>
+{% for r in rankings.mayor_parada %}<tr><td>{{ r.maquina.codigo_activo }}</td><td>{{ r.maquina.nombre_maquina }}</td><td class="num">{{ r.horas_parada }}</td></tr>{% empty %}<tr><td colspan="3" class="vacio">Sin datos.</td></tr>{% endfor %}
+</tbody></table>
+
+<p class="meta" style="margin-top:16px;">Generado automáticamente por el Sistema de Gestión de Mantenimiento — Choco Pasión.</p>
+</body>
+</html>
