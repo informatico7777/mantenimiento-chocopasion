@@ -2,7 +2,6 @@
 from django.db import models
 
 from .choices import (
-from config.base_model import MANAGED
     CRITICIDAD,
     ESTADO_AREA,
     ESTADO_GENERICO,
@@ -10,6 +9,7 @@ from config.base_model import MANAGED
     NIVEL_RIESGO,
     TIPO_ENERGIA_MAQUINA,
 )
+from config.base_model import MANAGED
 
 
 class Area(models.Model):

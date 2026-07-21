@@ -49,3 +49,5 @@ media/reportes_pdf/*
 .idea/
 .DS_Store
 Thumbs.db
+respaldo_migracion/
+respaldo_migraciones_mysql/
