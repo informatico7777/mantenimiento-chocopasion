@@ -1,0 +1,1202 @@
+[
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 1,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "usuarios",
+    "id_registro_afectado": 1,
+    "accion": "LOGIN",
+    "fecha_hora": "2026-06-25T03:22:52",
+    "descripcion": "Inicio de sesión de admin",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 2,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "areas",
+    "id_registro_afectado": 11,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-06-25T03:32:06",
+    "descripcion": "Estado -> INACTIVA",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 3,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "areas",
+    "id_registro_afectado": 11,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-06-25T03:32:08",
+    "descripcion": "Estado -> ACTIVA",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 4,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "usuarios",
+    "id_registro_afectado": 1,
+    "accion": "LOGIN",
+    "fecha_hora": "2026-06-25T05:10:01",
+    "descripcion": "Inicio de sesión de admin",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 5,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "usuarios",
+    "id_registro_afectado": 1,
+    "accion": "LOGIN",
+    "fecha_hora": "2026-06-25T05:38:34",
+    "descripcion": "Inicio de sesión de admin",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 6,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "areas",
+    "id_registro_afectado": 11,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-06-25T06:35:53",
+    "descripcion": "Área Almacén de repuestos",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 7,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "observaciones_diarias",
+    "id_registro_afectado": 1,
+    "accion": "CREAR",
+    "fecha_hora": "2026-06-25T06:37:50",
+    "descripcion": "Observación FUGA",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 8,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "usuarios",
+    "id_registro_afectado": 1,
+    "accion": "LOGIN",
+    "fecha_hora": "2026-07-09T05:32:18",
+    "descripcion": "Inicio de sesión de admin",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 9,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "usuarios",
+    "id_registro_afectado": 1,
+    "accion": "LOGIN",
+    "fecha_hora": "2026-07-09T05:44:13",
+    "descripcion": "Inicio de sesión de admin",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 10,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "areas",
+    "id_registro_afectado": 11,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-07-09T06:17:35",
+    "descripcion": "Área Almacén de repuestos",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 11,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 19,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-09T06:50:44",
+    "descripcion": "Componente Agitador (CP-ALM-001)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 12,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 20,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-09T06:55:02",
+    "descripcion": "Componente Motorreductor del agitador (CP-ALM-001)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 13,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 21,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-09T06:56:30",
+    "descripcion": "Componente Resistencia térmica (CP-ALM-001)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 14,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 22,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-09T06:57:54",
+    "descripcion": "Componente Válvula sanitaria (CP-ALM-001)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 15,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 23,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-09T06:59:11",
+    "descripcion": "Componente Sellos y empaques (CP-ALM-001)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 16,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 24,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-09T07:00:07",
+    "descripcion": "Componente Tablero eléctrico (CP-ALM-001)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 17,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 24,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-07-09T07:01:23",
+    "descripcion": "Componente Tablero eléctrico",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 18,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "fallas_probables",
+    "id_registro_afectado": 1,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-09T07:05:47",
+    "descripcion": "Falla probable (CP-ALM-001) riesgo CRITICO",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 19,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "fallas_probables",
+    "id_registro_afectado": 2,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-09T07:10:23",
+    "descripcion": "Falla probable (CP-ALM-001) riesgo ALTO",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 20,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "maquina_repuesto",
+    "id_registro_afectado": 1,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-09T07:13:17",
+    "descripcion": "Repuesto crítico REP-ROD-001 -> CP-ALM-001",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 21,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "maquina_repuesto",
+    "id_registro_afectado": 2,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-09T07:14:15",
+    "descripcion": "Repuesto crítico REP-TER-001 -> CP-ALM-001",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 22,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "maquina_repuesto",
+    "id_registro_afectado": 2,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-07-09T07:14:55",
+    "descripcion": "Repuesto crítico REP-TER-001 (CP-ALM-001)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 23,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "maquina_repuesto",
+    "id_registro_afectado": 3,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-09T07:15:49",
+    "descripcion": "Repuesto crítico REP-EMP-001 -> CP-ALM-001",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 24,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "archivos_adjuntos",
+    "id_registro_afectado": 1,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-09T07:19:06",
+    "descripcion": "Subida de INFORME CALIDAD (1).pdf (MANUAL)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 25,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "archivos_adjuntos",
+    "id_registro_afectado": 2,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-09T07:20:24",
+    "descripcion": "Subida de Captura de pantalla 2026-05-16 155632.png (FOTO_MAQUINA)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 26,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "usuarios",
+    "id_registro_afectado": 1,
+    "accion": "LOGOUT",
+    "fecha_hora": "2026-07-09T07:20:50",
+    "descripcion": "Cierre de sesión de admin",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 27,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "usuarios",
+    "id_registro_afectado": 1,
+    "accion": "LOGIN",
+    "fecha_hora": "2026-07-09T07:21:24",
+    "descripcion": "Inicio de sesión de admin",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 28,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "checklist_plantilla",
+    "id_registro_afectado": 45,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-09T07:26:55",
+    "descripcion": "¿La marmita está limpia y sin restos del lote anterior?",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 29,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "reportes_falla",
+    "id_registro_afectado": 1,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-09T07:33:43",
+    "descripcion": "RF-2026-0001",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 30,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "ordenes_trabajo",
+    "id_registro_afectado": 1,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-09T07:44:43",
+    "descripcion": "OT-2026-0001",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 31,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "servicios_externos",
+    "id_registro_afectado": 1,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-09T07:46:57",
+    "descripcion": "Servicio externo OT 1",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 32,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "archivos_adjuntos",
+    "id_registro_afectado": 3,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-09T07:55:24",
+    "descripcion": "Subida de ima1.jpg (FOTO_MAQUINA)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 33,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "archivos_adjuntos",
+    "id_registro_afectado": 3,
+    "accion": "DESCARGAR",
+    "fecha_hora": "2026-07-09T07:55:39",
+    "descripcion": "Descarga de ima1.jpg",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 34,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "reportes_falla",
+    "id_registro_afectado": 2,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-09T07:56:05",
+    "descripcion": "Falla RF-2026-0002 desde observación #1",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 35,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 19,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-07-15T17:26:19",
+    "descripcion": "Estado del componente -> BUENO",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 36,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "fallas_probables",
+    "id_registro_afectado": 1,
+    "accion": "ELIMINAR",
+    "fecha_hora": "2026-07-15T18:48:24",
+    "descripcion": "Falla probable eliminada",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 37,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "fallas_probables",
+    "id_registro_afectado": 2,
+    "accion": "ELIMINAR",
+    "fecha_hora": "2026-07-15T18:48:30",
+    "descripcion": "Falla probable eliminada",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 38,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "auditoria_sistema",
+    "id_registro_afectado": null,
+    "accion": "DESCARGAR",
+    "fecha_hora": "2026-07-15T18:50:10",
+    "descripcion": "Exportación de auditoría a PDF",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 39,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "repuestos",
+    "id_registro_afectado": 6,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-07-15T18:55:24",
+    "descripcion": "REP-TEF-001",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 40,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "repuestos",
+    "id_registro_afectado": 4,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-07-15T18:56:30",
+    "descripcion": "REP-CON-001",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 41,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "repuestos",
+    "id_registro_afectado": 7,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-07-15T18:57:21",
+    "descripcion": "REP-EMP-001",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 42,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "repuestos",
+    "id_registro_afectado": 7,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-07-15T18:58:16",
+    "descripcion": "REP-EMP-001",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 43,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "repuestos",
+    "id_registro_afectado": 3,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-07-15T18:58:59",
+    "descripcion": "REP-FAJ-001",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 44,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "repuestos",
+    "id_registro_afectado": 5,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-07-15T18:59:59",
+    "descripcion": "REP-RES-001",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 45,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "repuestos",
+    "id_registro_afectado": 2,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-07-15T19:00:57",
+    "descripcion": "REP-ROD-001",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 46,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "repuestos",
+    "id_registro_afectado": 1,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-07-15T19:01:38",
+    "descripcion": "REP-TER-001",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 47,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "maquinas",
+    "id_registro_afectado": 4,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-07-15T21:22:10",
+    "descripcion": "Máquina CP-DES-001",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 48,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 25,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T21:26:45",
+    "descripcion": "Componente Motor eléctrico principal (CP-DES-001)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 49,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 5,
+    "accion": "ELIMINAR",
+    "fecha_hora": "2026-07-15T21:27:11",
+    "descripcion": "Componente Motorreductor eliminado",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 50,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 10,
+    "accion": "ELIMINAR",
+    "fecha_hora": "2026-07-15T21:27:20",
+    "descripcion": "Componente Rodamientos eliminado",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 51,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 26,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T21:28:38",
+    "descripcion": "Componente Rotor quebrador de granos (CP-DES-001)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 52,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 27,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T21:29:34",
+    "descripcion": "Componente Ventilador centrífugo de aspiración (CP-DES-001)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 53,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 28,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T21:30:29",
+    "descripcion": "Componente Sistema de transmisión por fajas y poleas (CP-DES-001)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 54,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 27,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-07-15T21:30:45",
+    "descripcion": "Componente Ventilador centrífugo de aspiración",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 55,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "maquinas",
+    "id_registro_afectado": 4,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-07-15T21:31:18",
+    "descripcion": "Máquina CP-DES-001",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 56,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 29,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T21:32:36",
+    "descripcion": "Componente Rodamientos del eje principal (CP-DES-001)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 57,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 30,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T21:33:26",
+    "descripcion": "Componente Tolva de alimentación (CP-DES-001)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 58,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 31,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T21:34:15",
+    "descripcion": "Componente Compuerta reguladora de alimentación (CP-DES-001)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 59,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 32,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T21:35:06",
+    "descripcion": "Componente Tamiz o malla clasificadora (CP-DES-001)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 60,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 33,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T21:35:45",
+    "descripcion": "Componente Ciclón separador de cascarilla (CP-DES-001)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 61,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 34,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T21:36:41",
+    "descripcion": "Componente Ductos de aspiración y descarga (CP-DES-001)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 62,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 35,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T21:37:21",
+    "descripcion": "Componente Compuerta reguladora de aire (CP-DES-001)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 63,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 36,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T21:39:14",
+    "descripcion": "Componente Interruptor de parada de emergencia (CP-DES-001)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 64,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 37,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T21:40:10",
+    "descripcion": "Componente Bandeja o recipiente de descarga de nibs (CP-DES-001)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 65,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "componentes_maquina",
+    "id_registro_afectado": 38,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T21:40:50",
+    "descripcion": "Componente Recipiente colector de cascarilla (CP-DES-001)",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 66,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "fallas_probables",
+    "id_registro_afectado": 3,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T21:44:09",
+    "descripcion": "Falla probable (CP-DES-001) riesgo ALTO",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 67,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "fallas_probables",
+    "id_registro_afectado": 4,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T21:45:42",
+    "descripcion": "Falla probable (CP-DES-001) riesgo ALTO",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 68,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "fallas_probables",
+    "id_registro_afectado": 5,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T21:47:44",
+    "descripcion": "Falla probable (CP-DES-001) riesgo CRITICO",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 69,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "fallas_probables",
+    "id_registro_afectado": 6,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T21:49:15",
+    "descripcion": "Falla probable (CP-DES-001) riesgo CRITICO",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 70,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "fallas_probables",
+    "id_registro_afectado": 7,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T21:50:47",
+    "descripcion": "Falla probable (CP-DES-001) riesgo ALTO",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 71,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "fallas_probables",
+    "id_registro_afectado": 8,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T21:52:44",
+    "descripcion": "Falla probable (CP-DES-001) riesgo ALTO",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 72,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "maquina_repuesto",
+    "id_registro_afectado": 4,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T21:55:51",
+    "descripcion": "Repuesto crítico REP-FAJ-001 -> CP-DES-001",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 73,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "checklist_ejecucion",
+    "id_registro_afectado": 1,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T22:04:23",
+    "descripcion": "Checklist CP-DES-001: APTA",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 74,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "maquinas",
+    "id_registro_afectado": 4,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-07-15T22:08:31",
+    "descripcion": "Máquina CP-DES-001",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 75,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "areas",
+    "id_registro_afectado": 11,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-07-15T22:12:34",
+    "descripcion": "Área Almacén de repuestos",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 76,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "proveedores",
+    "id_registro_afectado": 1,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-07-15T22:17:44",
+    "descripcion": "Proveedor general de repuestos industriales",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 77,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "proveedores",
+    "id_registro_afectado": 5,
+    "accion": "CREAR",
+    "fecha_hora": "2026-07-15T22:19:16",
+    "descripcion": "Suministros Industriales Huánuco S.A.C.",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 78,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "proveedores",
+    "id_registro_afectado": 2,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-07-15T22:20:03",
+    "descripcion": "Taller externo de mantenimiento",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 79,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "proveedores",
+    "id_registro_afectado": 3,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-07-15T22:20:50",
+    "descripcion": "Servicio técnico de refrigeración",
+    "ip_origen": "127.0.0.1"
+  }
+},
+{
+  "model": "reportes.auditoriasistema",
+  "pk": 80,
+  "fields": {
+    "id_usuario": [
+      "admin"
+    ],
+    "tabla_afectada": "proveedores",
+    "id_registro_afectado": 4,
+    "accion": "EDITAR",
+    "fecha_hora": "2026-07-15T22:21:20",
+    "descripcion": "Servicio de calibración",
+    "ip_origen": "127.0.0.1"
+  }
+}
+]

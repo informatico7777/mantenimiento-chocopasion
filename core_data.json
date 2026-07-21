@@ -1,0 +1,1630 @@
+[
+{
+  "model": "core.area",
+  "pk": 1,
+  "fields": {
+    "nombre_area": "Recepción",
+    "descripcion": "Ingreso y pesado de cacao e insumos.",
+    "responsable_area": null,
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.area",
+  "pk": 2,
+  "fields": {
+    "nombre_area": "Limpieza",
+    "descripcion": "Limpieza, selección y clasificación de granos.",
+    "responsable_area": null,
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.area",
+  "pk": 3,
+  "fields": {
+    "nombre_area": "Tostado",
+    "descripcion": "Tostado del cacao para desarrollo de aroma y reducción de humedad.",
+    "responsable_area": null,
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.area",
+  "pk": 4,
+  "fields": {
+    "nombre_area": "Quebrado y descascarillado",
+    "descripcion": "Ruptura del grano y separación de nibs y cascarilla.",
+    "responsable_area": null,
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.area",
+  "pk": 5,
+  "fields": {
+    "nombre_area": "Molienda y conchado",
+    "descripcion": "Transformación de nibs en pasta, refinado y conchado.",
+    "responsable_area": null,
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.area",
+  "pk": 6,
+  "fields": {
+    "nombre_area": "Formulación",
+    "descripcion": "Mezcla de pasta, azúcar, manteca, leche u otros ingredientes.",
+    "responsable_area": null,
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.area",
+  "pk": 7,
+  "fields": {
+    "nombre_area": "Almacenamiento térmico y templado",
+    "descripcion": "Mantenimiento de fluidez y control térmico.",
+    "responsable_area": null,
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.area",
+  "pk": 8,
+  "fields": {
+    "nombre_area": "Enfriado",
+    "descripcion": "Solidificación del chocolate moldeado.",
+    "responsable_area": null,
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.area",
+  "pk": 9,
+  "fields": {
+    "nombre_area": "Secado",
+    "descripcion": "Secado adicional y estabilización del cacao.",
+    "responsable_area": null,
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.area",
+  "pk": 10,
+  "fields": {
+    "nombre_area": "Envasado y sellado",
+    "descripcion": "Empaque y sellado del producto terminado.",
+    "responsable_area": null,
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.area",
+  "pk": 11,
+  "fields": {
+    "nombre_area": "Almacén de repuestos",
+    "descripcion": "Control de repuestos y herramientas.",
+    "responsable_area": [
+      "admin"
+    ],
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-07-15T22:12:34"
+  }
+},
+{
+  "model": "core.maquina",
+  "pk": 1,
+  "fields": {
+    "codigo_activo": "CP-REC-001",
+    "nombre_maquina": "Balanza electrónica digital HENLEL BC30N",
+    "tipo_maquina": "Balanza digital",
+    "id_area": 1,
+    "marca": "HENLEL",
+    "modelo": "BC30N",
+    "numero_serie": null,
+    "capacidad_valor": "40.00",
+    "capacidad_unidad": "kg",
+    "tipo_energia": "BATERIA",
+    "potencia_kw": null,
+    "potencia_hp": null,
+    "consumo_estimado_hora": null,
+    "consumo_estimado_lote": null,
+    "criticidad": "MEDIA",
+    "estado_operativo": "OPERATIVA",
+    "ubicacion_fisica": "Área de recepción",
+    "fecha_instalacion": null,
+    "fecha_registro": "2026-06-25T01:59:29",
+    "responsable_maquina": null,
+    "requiere_checklist_diario": true,
+    "requiere_calibracion": true,
+    "observaciones": "Pesaje de cacao e insumos.",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquina",
+  "pk": 2,
+  "fields": {
+    "codigo_activo": "CP-LIM-001",
+    "nombre_maquina": "Seleccionadora de granos AgroVision",
+    "tipo_maquina": "Seleccionadora de granos",
+    "id_area": 2,
+    "marca": "AgroVision",
+    "modelo": null,
+    "numero_serie": null,
+    "capacidad_valor": null,
+    "capacidad_unidad": "kg/h",
+    "tipo_energia": "ELECTRICA",
+    "potencia_kw": null,
+    "potencia_hp": "2.00",
+    "consumo_estimado_hora": null,
+    "consumo_estimado_lote": null,
+    "criticidad": "ALTA",
+    "estado_operativo": "OPERATIVA",
+    "ubicacion_fisica": "Área de limpieza",
+    "fecha_instalacion": null,
+    "fecha_registro": "2026-06-25T01:59:29",
+    "responsable_maquina": null,
+    "requiere_checklist_diario": true,
+    "requiere_calibracion": false,
+    "observaciones": "Limpieza y clasificación de granos.",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquina",
+  "pk": 3,
+  "fields": {
+    "codigo_activo": "CP-TOS-001",
+    "nombre_maquina": "Tostador AgroVision de 120 kg/batch",
+    "tipo_maquina": "Tostador de cacao",
+    "id_area": 3,
+    "marca": "AgroVision",
+    "modelo": null,
+    "numero_serie": null,
+    "capacidad_valor": "120.00",
+    "capacidad_unidad": "kg/batch",
+    "tipo_energia": "MIXTA",
+    "potencia_kw": null,
+    "potencia_hp": "2.00",
+    "consumo_estimado_hora": null,
+    "consumo_estimado_lote": null,
+    "criticidad": "MUY_ALTA",
+    "estado_operativo": "OPERATIVA",
+    "ubicacion_fisica": "Área de tostado",
+    "fecha_instalacion": null,
+    "fecha_registro": "2026-06-25T01:59:29",
+    "responsable_maquina": null,
+    "requiere_checklist_diario": true,
+    "requiere_calibracion": true,
+    "observaciones": "Tostador con tambor, GLP, termocupla y extractor.",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquina",
+  "pk": 4,
+  "fields": {
+    "codigo_activo": "CP-DES-001",
+    "nombre_maquina": "Descascarilladora / aventadora AgroVision",
+    "tipo_maquina": "Descascarilladora y aventadora de flujo neumático",
+    "id_area": 4,
+    "marca": "AgroVision",
+    "modelo": "NID-30 (Fischer Agro)",
+    "numero_serie": "CP-DES-001",
+    "capacidad_valor": "150.00",
+    "capacidad_unidad": "kg/h",
+    "tipo_energia": "ELECTRICA",
+    "potencia_kw": "1.12",
+    "potencia_hp": "1.50",
+    "consumo_estimado_hora": "1.12",
+    "consumo_estimado_lote": "1.12",
+    "criticidad": "MUY_ALTA",
+    "estado_operativo": "OPERATIVA",
+    "ubicacion_fisica": "Área de quebrado y descascarillado",
+    "fecha_instalacion": null,
+    "fecha_registro": "2026-06-25T01:59:29",
+    "responsable_maquina": [
+      "admin"
+    ],
+    "requiere_checklist_diario": true,
+    "requiere_calibracion": false,
+    "observaciones": "Cumple función de quebrado y separación de cascarilla.",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-07-15T22:08:31"
+  }
+},
+{
+  "model": "core.maquina",
+  "pk": 5,
+  "fields": {
+    "codigo_activo": "CP-MOL-001",
+    "nombre_maquina": "Conchador de paletas",
+    "tipo_maquina": "Conchador de paletas",
+    "id_area": 5,
+    "marca": null,
+    "modelo": null,
+    "numero_serie": null,
+    "capacidad_valor": "100.00",
+    "capacidad_unidad": "kg/batch",
+    "tipo_energia": "ELECTRICA",
+    "potencia_kw": null,
+    "potencia_hp": "3.00",
+    "consumo_estimado_hora": null,
+    "consumo_estimado_lote": null,
+    "criticidad": "MUY_ALTA",
+    "estado_operativo": "OPERATIVA",
+    "ubicacion_fisica": "Área de molienda y conchado",
+    "fecha_instalacion": null,
+    "fecha_registro": "2026-06-25T01:59:29",
+    "responsable_maquina": null,
+    "requiere_checklist_diario": true,
+    "requiere_calibracion": false,
+    "observaciones": "Molienda y conchado inicial.",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquina",
+  "pk": 6,
+  "fields": {
+    "codigo_activo": "CP-MF-001",
+    "nombre_maquina": "Conchador de billas DELIXI",
+    "tipo_maquina": "Conchador/refinador de billas",
+    "id_area": 5,
+    "marca": "DELIXI",
+    "modelo": "CDI-EM60G3R7T28",
+    "numero_serie": null,
+    "capacidad_valor": "60.00",
+    "capacidad_unidad": "kg/batch",
+    "tipo_energia": "ELECTRICA",
+    "potencia_kw": null,
+    "potencia_hp": "4.00",
+    "consumo_estimado_hora": null,
+    "consumo_estimado_lote": null,
+    "criticidad": "MUY_ALTA",
+    "estado_operativo": "OPERATIVA",
+    "ubicacion_fisica": "Área de molienda fina/refinado",
+    "fecha_instalacion": null,
+    "fecha_registro": "2026-06-25T01:59:29",
+    "responsable_maquina": null,
+    "requiere_checklist_diario": true,
+    "requiere_calibracion": false,
+    "observaciones": "Molienda fina, refinado y conchado.",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquina",
+  "pk": 7,
+  "fields": {
+    "codigo_activo": "CP-ALM-001",
+    "nombre_maquina": "Marmita",
+    "tipo_maquina": "Marmita térmica",
+    "id_area": 7,
+    "marca": null,
+    "modelo": null,
+    "numero_serie": null,
+    "capacidad_valor": null,
+    "capacidad_unidad": "kg",
+    "tipo_energia": "ELECTRICA",
+    "potencia_kw": null,
+    "potencia_hp": null,
+    "consumo_estimado_hora": null,
+    "consumo_estimado_lote": null,
+    "criticidad": "ALTA",
+    "estado_operativo": "OPERATIVA",
+    "ubicacion_fisica": "Área de templado",
+    "fecha_instalacion": null,
+    "fecha_registro": "2026-06-25T01:59:29",
+    "responsable_maquina": null,
+    "requiere_checklist_diario": true,
+    "requiere_calibracion": true,
+    "observaciones": "Manejo térmico y apoyo al templado.",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquina",
+  "pk": 8,
+  "fields": {
+    "codigo_activo": "CP-TER-001",
+    "nombre_maquina": "Termómetro infrarrojo",
+    "tipo_maquina": "Instrumento de medición",
+    "id_area": 7,
+    "marca": null,
+    "modelo": null,
+    "numero_serie": null,
+    "capacidad_valor": null,
+    "capacidad_unidad": "°C",
+    "tipo_energia": "BATERIA",
+    "potencia_kw": null,
+    "potencia_hp": null,
+    "consumo_estimado_hora": null,
+    "consumo_estimado_lote": null,
+    "criticidad": "MEDIA",
+    "estado_operativo": "OPERATIVA",
+    "ubicacion_fisica": "Área de templado",
+    "fecha_instalacion": null,
+    "fecha_registro": "2026-06-25T01:59:29",
+    "responsable_maquina": null,
+    "requiere_checklist_diario": true,
+    "requiere_calibracion": true,
+    "observaciones": "Control manual de temperatura.",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquina",
+  "pk": 9,
+  "fields": {
+    "codigo_activo": "CP-ENF-001",
+    "nombre_maquina": "Cámara de frío / cámara frigorífica",
+    "tipo_maquina": "Sistema de refrigeración",
+    "id_area": 8,
+    "marca": null,
+    "modelo": null,
+    "numero_serie": null,
+    "capacidad_valor": null,
+    "capacidad_unidad": "moldes/lote",
+    "tipo_energia": "ELECTRICA",
+    "potencia_kw": null,
+    "potencia_hp": null,
+    "consumo_estimado_hora": null,
+    "consumo_estimado_lote": null,
+    "criticidad": "MUY_ALTA",
+    "estado_operativo": "OPERATIVA",
+    "ubicacion_fisica": "Área de enfriado",
+    "fecha_instalacion": null,
+    "fecha_registro": "2026-06-25T01:59:29",
+    "responsable_maquina": null,
+    "requiere_checklist_diario": true,
+    "requiere_calibracion": true,
+    "observaciones": "Enfriado y solidificación del chocolate.",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquina",
+  "pk": 10,
+  "fields": {
+    "codigo_activo": "CP-SEC-001",
+    "nombre_maquina": "Secador rotatorio",
+    "tipo_maquina": "Secador rotatorio",
+    "id_area": 9,
+    "marca": null,
+    "modelo": null,
+    "numero_serie": null,
+    "capacidad_valor": "1000.00",
+    "capacidad_unidad": "kg/batch",
+    "tipo_energia": "MIXTA",
+    "potencia_kw": null,
+    "potencia_hp": "3.00",
+    "consumo_estimado_hora": null,
+    "consumo_estimado_lote": null,
+    "criticidad": "ALTA",
+    "estado_operativo": "OPERATIVA",
+    "ubicacion_fisica": "Área de secado",
+    "fecha_instalacion": null,
+    "fecha_registro": "2026-06-25T01:59:29",
+    "responsable_maquina": null,
+    "requiere_checklist_diario": true,
+    "requiere_calibracion": true,
+    "observaciones": "Secado adicional con control de temperatura y tiempo.",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquina",
+  "pk": 11,
+  "fields": {
+    "codigo_activo": "CP-EMP-001",
+    "nombre_maquina": "Selladora neumática / selladora a pedal",
+    "tipo_maquina": "Selladora",
+    "id_area": 10,
+    "marca": null,
+    "modelo": null,
+    "numero_serie": null,
+    "capacidad_valor": null,
+    "capacidad_unidad": "unidades/h",
+    "tipo_energia": "MIXTA",
+    "potencia_kw": null,
+    "potencia_hp": null,
+    "consumo_estimado_hora": null,
+    "consumo_estimado_lote": null,
+    "criticidad": "ALTA",
+    "estado_operativo": "OPERATIVA",
+    "ubicacion_fisica": "Área de envasado",
+    "fecha_instalacion": null,
+    "fecha_registro": "2026-06-25T01:59:29",
+    "responsable_maquina": null,
+    "requiere_checklist_diario": true,
+    "requiere_calibracion": false,
+    "observaciones": "Sellado de bolsas y empaques.",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.funcionproceso",
+  "pk": 1,
+  "fields": {
+    "numero_etapa": 1,
+    "nombre_etapa": "Recepción",
+    "funcion_principal": "Pesar el cacao que ingresa.",
+    "criticidad_funcion": "MEDIA",
+    "descripcion": "Control inicial de ingreso de cacao e insumos.",
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.funcionproceso",
+  "pk": 2,
+  "fields": {
+    "numero_etapa": 2,
+    "nombre_etapa": "Limpieza",
+    "funcion_principal": "Separar polvo, piedras, palos e impurezas.",
+    "criticidad_funcion": "ALTA",
+    "descripcion": "Protege máquinas posteriores y mejora la calidad del grano.",
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.funcionproceso",
+  "pk": 3,
+  "fields": {
+    "numero_etapa": 3,
+    "nombre_etapa": "Tostado",
+    "funcion_principal": "Desarrollar aroma, sabor y reducir humedad.",
+    "criticidad_funcion": "MUY_ALTA",
+    "descripcion": "Proceso térmico crítico para calidad sensorial.",
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.funcionproceso",
+  "pk": 4,
+  "fields": {
+    "numero_etapa": 4,
+    "nombre_etapa": "Quebrado",
+    "funcion_principal": "Romper el grano tostado.",
+    "criticidad_funcion": "ALTA",
+    "descripcion": "Prepara el grano para separar cascarilla y nibs.",
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.funcionproceso",
+  "pk": 5,
+  "fields": {
+    "numero_etapa": 5,
+    "nombre_etapa": "Descascarillado",
+    "funcion_principal": "Separar cáscara y nibs de cacao.",
+    "criticidad_funcion": "MUY_ALTA",
+    "descripcion": "Separación por flujo neumático y clasificación.",
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.funcionproceso",
+  "pk": 6,
+  "fields": {
+    "numero_etapa": 6,
+    "nombre_etapa": "Molienda",
+    "funcion_principal": "Convertir nibs en pasta o licor de cacao.",
+    "criticidad_funcion": "MUY_ALTA",
+    "descripcion": "Primera transformación mecánica del nib.",
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.funcionproceso",
+  "pk": 7,
+  "fields": {
+    "numero_etapa": 7,
+    "nombre_etapa": "Molienda fina",
+    "funcion_principal": "Reducir tamaño de partícula.",
+    "criticidad_funcion": "MUY_ALTA",
+    "descripcion": "Refinamiento por fricción o billas.",
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.funcionproceso",
+  "pk": 8,
+  "fields": {
+    "numero_etapa": 8,
+    "nombre_etapa": "Formulación",
+    "funcion_principal": "Mezclar pasta, azúcar, manteca, leche u otros.",
+    "criticidad_funcion": "ALTA",
+    "descripcion": "Control de receta y homogeneidad.",
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.funcionproceso",
+  "pk": 9,
+  "fields": {
+    "numero_etapa": 9,
+    "nombre_etapa": "Refinado",
+    "funcion_principal": "Lograr textura fina del chocolate.",
+    "criticidad_funcion": "MUY_ALTA",
+    "descripcion": "Evita sensación arenosa y mejora calidad.",
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.funcionproceso",
+  "pk": 10,
+  "fields": {
+    "numero_etapa": 10,
+    "nombre_etapa": "Conchado",
+    "funcion_principal": "Mejorar sabor, textura, fluidez y eliminar volátiles.",
+    "criticidad_funcion": "MUY_ALTA",
+    "descripcion": "Proceso prolongado de desarrollo sensorial.",
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.funcionproceso",
+  "pk": 11,
+  "fields": {
+    "numero_etapa": 11,
+    "nombre_etapa": "Almacenamiento térmico",
+    "funcion_principal": "Mantener chocolate fluido y homogéneo.",
+    "criticidad_funcion": "ALTA",
+    "descripcion": "Mantiene temperatura antes de templado o moldeado.",
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.funcionproceso",
+  "pk": 12,
+  "fields": {
+    "numero_etapa": 12,
+    "nombre_etapa": "Templado",
+    "funcion_principal": "Formar cristales estables de manteca de cacao.",
+    "criticidad_funcion": "MUY_ALTA",
+    "descripcion": "Define brillo, textura, ruptura y estabilidad.",
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.funcionproceso",
+  "pk": 13,
+  "fields": {
+    "numero_etapa": 13,
+    "nombre_etapa": "Enfriado",
+    "funcion_principal": "Solidificar el chocolate moldeado.",
+    "criticidad_funcion": "MUY_ALTA",
+    "descripcion": "Permite desmolde y estabilidad final.",
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.funcionproceso",
+  "pk": 14,
+  "fields": {
+    "numero_etapa": 14,
+    "nombre_etapa": "Secado rotatorio",
+    "funcion_principal": "Reducir y estabilizar humedad del cacao.",
+    "criticidad_funcion": "ALTA",
+    "descripcion": "Secado adicional antes de almacenamiento o transformación.",
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.funcionproceso",
+  "pk": 15,
+  "fields": {
+    "numero_etapa": 15,
+    "nombre_etapa": "Sellado",
+    "funcion_principal": "Sellar bolsas o empaques del chocolate terminado.",
+    "criticidad_funcion": "ALTA",
+    "descripcion": "Conserva calidad, inocuidad y presentación.",
+    "estado": "ACTIVA",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquinafuncion",
+  "pk": 1,
+  "fields": {
+    "id_maquina": 1,
+    "id_funcion": 1,
+    "es_funcion_principal": true,
+    "observacion": "Función principal del activo.",
+    "creado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquinafuncion",
+  "pk": 2,
+  "fields": {
+    "id_maquina": 2,
+    "id_funcion": 2,
+    "es_funcion_principal": true,
+    "observacion": "Función principal del activo.",
+    "creado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquinafuncion",
+  "pk": 3,
+  "fields": {
+    "id_maquina": 3,
+    "id_funcion": 3,
+    "es_funcion_principal": true,
+    "observacion": "Función principal del activo.",
+    "creado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquinafuncion",
+  "pk": 4,
+  "fields": {
+    "id_maquina": 4,
+    "id_funcion": 5,
+    "es_funcion_principal": true,
+    "observacion": "Función principal del activo.",
+    "creado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquinafuncion",
+  "pk": 5,
+  "fields": {
+    "id_maquina": 5,
+    "id_funcion": 6,
+    "es_funcion_principal": true,
+    "observacion": "Función principal del activo.",
+    "creado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquinafuncion",
+  "pk": 6,
+  "fields": {
+    "id_maquina": 6,
+    "id_funcion": 7,
+    "es_funcion_principal": true,
+    "observacion": "Función principal del activo.",
+    "creado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquinafuncion",
+  "pk": 7,
+  "fields": {
+    "id_maquina": 7,
+    "id_funcion": 11,
+    "es_funcion_principal": true,
+    "observacion": "Función principal del activo.",
+    "creado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquinafuncion",
+  "pk": 8,
+  "fields": {
+    "id_maquina": 9,
+    "id_funcion": 13,
+    "es_funcion_principal": true,
+    "observacion": "Función principal del activo.",
+    "creado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquinafuncion",
+  "pk": 9,
+  "fields": {
+    "id_maquina": 10,
+    "id_funcion": 14,
+    "es_funcion_principal": true,
+    "observacion": "Función principal del activo.",
+    "creado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquinafuncion",
+  "pk": 10,
+  "fields": {
+    "id_maquina": 11,
+    "id_funcion": 15,
+    "es_funcion_principal": true,
+    "observacion": "Función principal del activo.",
+    "creado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquinafuncion",
+  "pk": 16,
+  "fields": {
+    "id_maquina": 4,
+    "id_funcion": 4,
+    "es_funcion_principal": false,
+    "observacion": "Función secundaria o compartida del activo.",
+    "creado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquinafuncion",
+  "pk": 17,
+  "fields": {
+    "id_maquina": 5,
+    "id_funcion": 8,
+    "es_funcion_principal": false,
+    "observacion": "Función secundaria o compartida del activo.",
+    "creado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquinafuncion",
+  "pk": 18,
+  "fields": {
+    "id_maquina": 6,
+    "id_funcion": 8,
+    "es_funcion_principal": false,
+    "observacion": "Función secundaria o compartida del activo.",
+    "creado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquinafuncion",
+  "pk": 19,
+  "fields": {
+    "id_maquina": 7,
+    "id_funcion": 8,
+    "es_funcion_principal": false,
+    "observacion": "Función secundaria o compartida del activo.",
+    "creado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquinafuncion",
+  "pk": 20,
+  "fields": {
+    "id_maquina": 6,
+    "id_funcion": 9,
+    "es_funcion_principal": false,
+    "observacion": "Función secundaria o compartida del activo.",
+    "creado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquinafuncion",
+  "pk": 21,
+  "fields": {
+    "id_maquina": 5,
+    "id_funcion": 10,
+    "es_funcion_principal": false,
+    "observacion": "Función secundaria o compartida del activo.",
+    "creado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquinafuncion",
+  "pk": 22,
+  "fields": {
+    "id_maquina": 6,
+    "id_funcion": 10,
+    "es_funcion_principal": false,
+    "observacion": "Función secundaria o compartida del activo.",
+    "creado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquinafuncion",
+  "pk": 23,
+  "fields": {
+    "id_maquina": 8,
+    "id_funcion": 12,
+    "es_funcion_principal": false,
+    "observacion": "Función secundaria o compartida del activo.",
+    "creado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.maquinafuncion",
+  "pk": 24,
+  "fields": {
+    "id_maquina": 7,
+    "id_funcion": 12,
+    "es_funcion_principal": false,
+    "observacion": "Función secundaria o compartida del activo.",
+    "creado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 1,
+  "fields": {
+    "id_maquina": 7,
+    "nombre_componente": "Termocupla / sensor de temperatura",
+    "tipo_componente": "TERMICO",
+    "descripcion": null,
+    "vida_util_estimada_horas": null,
+    "criticidad_componente": "MUY_ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": true,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 2,
+  "fields": {
+    "id_maquina": 9,
+    "nombre_componente": "Termocupla / sensor de temperatura",
+    "tipo_componente": "TERMICO",
+    "descripcion": null,
+    "vida_util_estimada_horas": null,
+    "criticidad_componente": "MUY_ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": true,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 3,
+  "fields": {
+    "id_maquina": 10,
+    "nombre_componente": "Termocupla / sensor de temperatura",
+    "tipo_componente": "TERMICO",
+    "descripcion": null,
+    "vida_util_estimada_horas": null,
+    "criticidad_componente": "MUY_ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": true,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 4,
+  "fields": {
+    "id_maquina": 3,
+    "nombre_componente": "Termocupla / sensor de temperatura",
+    "tipo_componente": "TERMICO",
+    "descripcion": null,
+    "vida_util_estimada_horas": null,
+    "criticidad_componente": "MUY_ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": true,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 6,
+  "fields": {
+    "id_maquina": 6,
+    "nombre_componente": "Motorreductor",
+    "tipo_componente": "MECANICO",
+    "descripcion": null,
+    "vida_util_estimada_horas": null,
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": true,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 7,
+  "fields": {
+    "id_maquina": 5,
+    "nombre_componente": "Motorreductor",
+    "tipo_componente": "MECANICO",
+    "descripcion": null,
+    "vida_util_estimada_horas": null,
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": true,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 8,
+  "fields": {
+    "id_maquina": 10,
+    "nombre_componente": "Motorreductor",
+    "tipo_componente": "MECANICO",
+    "descripcion": null,
+    "vida_util_estimada_horas": null,
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": true,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 9,
+  "fields": {
+    "id_maquina": 3,
+    "nombre_componente": "Motorreductor",
+    "tipo_componente": "MECANICO",
+    "descripcion": null,
+    "vida_util_estimada_horas": null,
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": true,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 11,
+  "fields": {
+    "id_maquina": 2,
+    "nombre_componente": "Rodamientos",
+    "tipo_componente": "MECANICO",
+    "descripcion": null,
+    "vida_util_estimada_horas": null,
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": true,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 12,
+  "fields": {
+    "id_maquina": 6,
+    "nombre_componente": "Rodamientos",
+    "tipo_componente": "MECANICO",
+    "descripcion": null,
+    "vida_util_estimada_horas": null,
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": true,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 13,
+  "fields": {
+    "id_maquina": 5,
+    "nombre_componente": "Rodamientos",
+    "tipo_componente": "MECANICO",
+    "descripcion": null,
+    "vida_util_estimada_horas": null,
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": true,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 14,
+  "fields": {
+    "id_maquina": 7,
+    "nombre_componente": "Resistencia / sistema térmico",
+    "tipo_componente": "TERMICO",
+    "descripcion": null,
+    "vida_util_estimada_horas": null,
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 15,
+  "fields": {
+    "id_maquina": 11,
+    "nombre_componente": "Resistencia / sistema térmico",
+    "tipo_componente": "TERMICO",
+    "descripcion": null,
+    "vida_util_estimada_horas": null,
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 16,
+  "fields": {
+    "id_maquina": 9,
+    "nombre_componente": "Compresor",
+    "tipo_componente": "REFRIGERACION",
+    "descripcion": null,
+    "vida_util_estimada_horas": null,
+    "criticidad_componente": "MUY_ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 17,
+  "fields": {
+    "id_maquina": 11,
+    "nombre_componente": "Cinta teflón",
+    "tipo_componente": "SANITARIO",
+    "descripcion": null,
+    "vida_util_estimada_horas": null,
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 18,
+  "fields": {
+    "id_maquina": 1,
+    "nombre_componente": "Celda de carga",
+    "tipo_componente": "ELECTRONICO",
+    "descripcion": null,
+    "vida_util_estimada_horas": null,
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": true,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 19,
+  "fields": {
+    "id_maquina": 7,
+    "nombre_componente": "Agitador",
+    "tipo_componente": "MECANICO",
+    "descripcion": "Elemento encargado de mantener el chocolate en movimiento para evitar sedimentación y mejorar la homogeneidad",
+    "vida_util_estimada_horas": "3000.00",
+    "criticidad_componente": "MUY_ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-07-09T06:50:44",
+    "actualizado_en": "2026-07-09T06:50:44"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 20,
+  "fields": {
+    "id_maquina": 7,
+    "nombre_componente": "Motorreductor del agitador",
+    "tipo_componente": "MECANICO",
+    "descripcion": "Sistema que transmite movimiento al agitador a velocidad controlada",
+    "vida_util_estimada_horas": "40000.00",
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-07-09T06:55:02",
+    "actualizado_en": "2026-07-09T06:55:02"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 21,
+  "fields": {
+    "id_maquina": 7,
+    "nombre_componente": "Resistencia térmica",
+    "tipo_componente": "TERMICO",
+    "descripcion": "Elemento encargado de generar calor para mantener el chocolate fluido",
+    "vida_util_estimada_horas": "2500.00",
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-07-09T06:56:30",
+    "actualizado_en": "2026-07-09T06:56:30"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 22,
+  "fields": {
+    "id_maquina": 7,
+    "nombre_componente": "Válvula sanitaria",
+    "tipo_componente": "SANITARIO",
+    "descripcion": "Permite la descarga higiénica del chocolate hacia la siguiente etapa",
+    "vida_util_estimada_horas": "3000.00",
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-07-09T06:57:54",
+    "actualizado_en": "2026-07-09T06:57:54"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 23,
+  "fields": {
+    "id_maquina": 7,
+    "nombre_componente": "Sellos y empaques",
+    "tipo_componente": "SANITARIO",
+    "descripcion": "Evitan fugas de chocolate y contaminación del producto",
+    "vida_util_estimada_horas": "1500.00",
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-07-09T06:59:11",
+    "actualizado_en": "2026-07-09T06:59:11"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 24,
+  "fields": {
+    "id_maquina": 7,
+    "nombre_componente": "Tablero eléctrico",
+    "tipo_componente": "ELECTRICO",
+    "descripcion": "Controla encendido, temperatura, agitación y protección eléctrica",
+    "vida_util_estimada_horas": "5000.00",
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-07-09T07:00:07",
+    "actualizado_en": "2026-07-09T07:01:23"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 25,
+  "fields": {
+    "id_maquina": 4,
+    "nombre_componente": "Motor eléctrico principal",
+    "tipo_componente": "ELECTRICO",
+    "descripcion": "Proporciona la potencia mecánica necesaria para accionar el sistema de quebrado y separación de cascarilla. Potencia referencial de 1.50 HP.",
+    "vida_util_estimada_horas": "30000.00",
+    "criticidad_componente": "MUY_ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-07-15T21:26:45",
+    "actualizado_en": "2026-07-15T21:26:45"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 26,
+  "fields": {
+    "id_maquina": 4,
+    "nombre_componente": "Rotor quebrador de granos",
+    "tipo_componente": "MECANICO",
+    "descripcion": "Elemento rotativo encargado de fracturar los granos de cacao antes de la separación neumática de la cascarilla.",
+    "vida_util_estimada_horas": "15000.00",
+    "criticidad_componente": "MUY_ALTA",
+    "requiere_lubricacion": true,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-07-15T21:28:38",
+    "actualizado_en": "2026-07-15T21:28:38"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 27,
+  "fields": {
+    "id_maquina": 4,
+    "nombre_componente": "Ventilador centrífugo de aspiración",
+    "tipo_componente": "NEUMATICO",
+    "descripcion": "Genera el flujo de aire utilizado para separar la cascarilla liviana de los fragmentos de nibs de cacao",
+    "vida_util_estimada_horas": "2000.00",
+    "criticidad_componente": "MUY_ALTA",
+    "requiere_lubricacion": true,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-07-15T21:29:34",
+    "actualizado_en": "2026-07-15T21:30:45"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 28,
+  "fields": {
+    "id_maquina": 4,
+    "nombre_componente": "Sistema de transmisión por fajas y poleas",
+    "tipo_componente": "MECANICO",
+    "descripcion": "Transmite el movimiento del motor hacia el rotor quebrador y otros elementos rotativos del equipo.",
+    "vida_util_estimada_horas": "800.00",
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-07-15T21:30:29",
+    "actualizado_en": "2026-07-15T21:30:29"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 29,
+  "fields": {
+    "id_maquina": 4,
+    "nombre_componente": "Rodamientos del eje principal",
+    "tipo_componente": "MECANICO",
+    "descripcion": "Soportan el eje del rotor, reducen la fricción y permiten el giro estable del sistema de quebrado.",
+    "vida_util_estimada_horas": "300.00",
+    "criticidad_componente": "MUY_ALTA",
+    "requiere_lubricacion": true,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-07-15T21:32:36",
+    "actualizado_en": "2026-07-15T21:32:36"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 30,
+  "fields": {
+    "id_maquina": 4,
+    "nombre_componente": "Tolva de alimentación",
+    "tipo_componente": "MECANICO",
+    "descripcion": "Recibe los granos de cacao y permite su ingreso controlado hacia el mecanismo de quebrado.",
+    "vida_util_estimada_horas": "2000.00",
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-07-15T21:33:26",
+    "actualizado_en": "2026-07-15T21:33:26"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 31,
+  "fields": {
+    "id_maquina": 4,
+    "nombre_componente": "Compuerta reguladora de alimentación",
+    "tipo_componente": "MECANICO",
+    "descripcion": "Regula el caudal de cacao que ingresa desde la tolva hacia el rotor quebrador.",
+    "vida_util_estimada_horas": "1200.00",
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": true,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-07-15T21:34:15",
+    "actualizado_en": "2026-07-15T21:34:15"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 32,
+  "fields": {
+    "id_maquina": 4,
+    "nombre_componente": "Tamiz o malla clasificadora",
+    "tipo_componente": "MECANICO",
+    "descripcion": "Clasifica los fragmentos de cacao según su tamaño y evita el paso de partículas fuera de especificación.",
+    "vida_util_estimada_horas": "600.00",
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-07-15T21:35:06",
+    "actualizado_en": "2026-07-15T21:35:06"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 33,
+  "fields": {
+    "id_maquina": 4,
+    "nombre_componente": "Ciclón separador de cascarilla",
+    "tipo_componente": "NEUMATICO",
+    "descripcion": "Separa y concentra la cascarilla transportada por la corriente de aire generada por el ventilador.",
+    "vida_util_estimada_horas": "2000.00",
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-07-15T21:35:45",
+    "actualizado_en": "2026-07-15T21:35:45"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 34,
+  "fields": {
+    "id_maquina": 4,
+    "nombre_componente": "Ductos de aspiración y descarga",
+    "tipo_componente": "NEUMATICO",
+    "descripcion": "Conducen el flujo de aire, la cascarilla y los fragmentos separados hacia sus respectivos puntos de descarga.",
+    "vida_util_estimada_horas": "15000.00",
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-07-15T21:36:41",
+    "actualizado_en": "2026-07-15T21:36:41"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 35,
+  "fields": {
+    "id_maquina": 4,
+    "nombre_componente": "Compuerta reguladora de aire",
+    "tipo_componente": "NEUMATICO",
+    "descripcion": "Permite ajustar manualmente el flujo de aire para conseguir una separación adecuada entre nibs y cascarilla.",
+    "vida_util_estimada_horas": "1200.00",
+    "criticidad_componente": "ALTA",
+    "requiere_lubricacion": true,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-07-15T21:37:21",
+    "actualizado_en": "2026-07-15T21:37:21"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 36,
+  "fields": {
+    "id_maquina": 4,
+    "nombre_componente": "Interruptor de parada de emergencia",
+    "tipo_componente": "OTRO",
+    "descripcion": "Permite detener inmediatamente el funcionamiento de la máquina ante una condición insegura o una falla crítica.",
+    "vida_util_estimada_horas": "1000.00",
+    "criticidad_componente": "MUY_ALTA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-07-15T21:39:14",
+    "actualizado_en": "2026-07-15T21:39:14"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 37,
+  "fields": {
+    "id_maquina": 4,
+    "nombre_componente": "Bandeja o recipiente de descarga de nibs",
+    "tipo_componente": "MECANICO",
+    "descripcion": "Recibe los fragmentos de cacao separados y facilita su traslado hacia la etapa siguiente del proceso.",
+    "vida_util_estimada_horas": "2000.00",
+    "criticidad_componente": "MEDIA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-07-15T21:40:10",
+    "actualizado_en": "2026-07-15T21:40:10"
+  }
+},
+{
+  "model": "core.componentemaquina",
+  "pk": 38,
+  "fields": {
+    "id_maquina": 4,
+    "nombre_componente": "Recipiente colector de cascarilla",
+    "tipo_componente": "MECANICO",
+    "descripcion": "Almacena temporalmente la cascarilla separada para su retiro y disposición posterior.",
+    "vida_util_estimada_horas": "2000.00",
+    "criticidad_componente": "MEDIA",
+    "requiere_lubricacion": false,
+    "requiere_calibracion": false,
+    "estado_componente": "BUENO",
+    "creado_en": "2026-07-15T21:40:50",
+    "actualizado_en": "2026-07-15T21:40:50"
+  }
+},
+{
+  "model": "core.fallaprobable",
+  "pk": 3,
+  "fields": {
+    "id_maquina": 4,
+    "id_componente": 25,
+    "descripcion_falla": "Sobrecalentamiento del motor eléctrico durante el funcionamiento continuo de la máquina.",
+    "causa_probable": "Sobrecarga, ventilación insuficiente, acumulación de polvo, bajo voltaje, conexiones flojas o deterioro del bobinado.",
+    "efecto_en_produccion": "Parada inesperada de la máquina, reducción de capacidad, interrupción del quebrado y posible daño permanente del motor.",
+    "probabilidad_porcentaje": "35.00",
+    "nivel_probabilidad": "MEDIA",
+    "severidad": 9,
+    "detectabilidad": 4,
+    "nivel_riesgo": "ALTO",
+    "accion_preventiva_sugerida": "Limpiar periódicamente las rejillas de ventilación, medir corriente y temperatura, ajustar conexiones eléctricas y evitar operar por encima de la capacidad nominal.",
+    "estado": "ACTIVA",
+    "creado_en": "2026-07-15T21:44:09",
+    "actualizado_en": "2026-07-15T21:44:09"
+  }
+},
+{
+  "model": "core.fallaprobable",
+  "pk": 4,
+  "fields": {
+    "id_maquina": 4,
+    "id_componente": 29,
+    "descripcion_falla": "Desgaste, recalentamiento o agarrotamiento de los rodamientos del eje principal.",
+    "causa_probable": "Lubricación insuficiente, contaminación con polvo, desalineación, sobrecarga o vida útil cumplida.",
+    "efecto_en_produccion": "Vibración excesiva, ruido anormal, pérdida de velocidad, daño del eje y detención de la máquina.",
+    "probabilidad_porcentaje": "40.00",
+    "nivel_probabilidad": "MEDIA",
+    "severidad": 8,
+    "detectabilidad": 5,
+    "nivel_riesgo": "ALTO",
+    "accion_preventiva_sugerida": "Lubricar según frecuencia establecida, revisar temperatura y vibración, inspeccionar holguras y sustituir los rodamientos cuando presenten desgaste.",
+    "estado": "ACTIVA",
+    "creado_en": "2026-07-15T21:45:42",
+    "actualizado_en": "2026-07-15T21:45:42"
+  }
+},
+{
+  "model": "core.fallaprobable",
+  "pk": 5,
+  "fields": {
+    "id_maquina": 4,
+    "id_componente": 28,
+    "descripcion_falla": "Rotura, aflojamiento o deslizamiento de las fajas de transmisión.",
+    "causa_probable": "Tensión incorrecta, desgaste, mala alineación de poleas, contaminación con grasa o sobrecarga mecánica.",
+    "efecto_en_produccion": "Pérdida de movimiento del rotor, reducción del rendimiento y paralización total del proceso de descascarillado.",
+    "probabilidad_porcentaje": "45.00",
+    "nivel_probabilidad": "MEDIA",
+    "severidad": 7,
+    "detectabilidad": 3,
+    "nivel_riesgo": "CRITICO",
+    "accion_preventiva_sugerida": "Verificar semanalmente tensión, alineación, grietas y desgaste; mantener las fajas limpias y disponer de repuestos compatibles.",
+    "estado": "ACTIVA",
+    "creado_en": "2026-07-15T21:47:44",
+    "actualizado_en": "2026-07-15T21:47:44"
+  }
+},
+{
+  "model": "core.fallaprobable",
+  "pk": 6,
+  "fields": {
+    "id_maquina": 4,
+    "id_componente": 26,
+    "descripcion_falla": "Bloqueo o atascamiento del rotor durante el ingreso de granos de cacao.",
+    "causa_probable": "Alimentación excesiva, presencia de cuerpos extraños, granos húmedos, acumulación de residuos o deformación del rotor.",
+    "efecto_en_produccion": "Interrupción inmediata del proceso, sobrecarga del motor, daño de la transmisión y pérdida de producto.",
+    "probabilidad_porcentaje": "30.00",
+    "nivel_probabilidad": "MEDIA",
+    "severidad": 8,
+    "detectabilidad": 3,
+    "nivel_riesgo": "CRITICO",
+    "accion_preventiva_sugerida": "Controlar el caudal de alimentación, inspeccionar la materia prima, limpiar el rotor después de cada jornada y retirar cuerpos extraños antes del procesamiento.",
+    "estado": "ACTIVA",
+    "creado_en": "2026-07-15T21:49:15",
+    "actualizado_en": "2026-07-15T21:49:15"
+  }
+},
+{
+  "model": "core.fallaprobable",
+  "pk": 7,
+  "fields": {
+    "id_maquina": 4,
+    "id_componente": 27,
+    "descripcion_falla": "Disminución o pérdida del flujo de aire generado por el ventilador de aspiración",
+    "causa_probable": "Acumulación de cascarilla, impulsor desgastado, giro incorrecto, rodamientos deteriorados, obstrucción o velocidad insuficiente.",
+    "efecto_en_produccion": "Separación deficiente de cascarilla y nibs, contaminación del producto y necesidad de reprocesamiento.",
+    "probabilidad_porcentaje": "35.00",
+    "nivel_probabilidad": "MEDIA",
+    "severidad": 8,
+    "detectabilidad": 4,
+    "nivel_riesgo": "ALTO",
+    "accion_preventiva_sugerida": "Limpiar el impulsor y la carcasa, comprobar sentido de giro, inspeccionar rodamientos y verificar periódicamente el caudal de aspiración.",
+    "estado": "ACTIVA",
+    "creado_en": "2026-07-15T21:50:47",
+    "actualizado_en": "2026-07-15T21:50:47"
+  }
+},
+{
+  "model": "core.fallaprobable",
+  "pk": 8,
+  "fields": {
+    "id_maquina": 4,
+    "id_componente": 32,
+    "descripcion_falla": "Obstrucción, deformación o rotura de la malla clasificadora.",
+    "causa_probable": "Acumulación de residuos, golpes, fatiga del material, humedad elevada o paso de objetos extraños.",
+    "efecto_en_produccion": "Clasificación inadecuada, mezcla de partículas, pérdida de producto y disminución de la calidad del cacao procesado.",
+    "probabilidad_porcentaje": "35.00",
+    "nivel_probabilidad": "MEDIA",
+    "severidad": 6,
+    "detectabilidad": 3,
+    "nivel_riesgo": "ALTO",
+    "accion_preventiva_sugerida": "Limpiar la malla al finalizar cada lote, verificar tensión e integridad, evitar golpes y sustituirla cuando presente perforaciones o deformaciones.",
+    "estado": "ACTIVA",
+    "creado_en": "2026-07-15T21:52:44",
+    "actualizado_en": "2026-07-15T21:52:44"
+  }
+}
+]

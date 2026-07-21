@@ -2,6 +2,7 @@
 from django.db import models
 
 from apps.core.choices import CRITICIDAD
+from config.base_model import MANAGED
 
 
 class Proveedor(models.Model):
@@ -25,7 +26,7 @@ class Proveedor(models.Model):
     actualizado_en = models.DateTimeField(auto_now=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "proveedores"
         verbose_name = "Proveedor"
         verbose_name_plural = "Proveedores"
@@ -60,7 +61,7 @@ class Repuesto(models.Model):
     actualizado_en = models.DateTimeField(auto_now=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "repuestos"
         verbose_name = "Repuesto"
         verbose_name_plural = "Repuestos"
@@ -99,7 +100,7 @@ class MaquinaRepuesto(models.Model):
     creado_en = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "maquina_repuesto"
         verbose_name = "Repuesto por máquina"
         verbose_name_plural = "Repuestos por máquina"
@@ -135,7 +136,7 @@ class MovimientoRepuesto(models.Model):
     observacion = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "movimiento_repuestos"
         verbose_name = "Movimiento de repuesto"
         verbose_name_plural = "Movimientos de repuestos"
@@ -175,7 +176,7 @@ class ServicioExterno(models.Model):
     actualizado_en = models.DateTimeField(auto_now=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "servicios_externos"
         verbose_name = "Servicio externo"
         verbose_name_plural = "Servicios externos"

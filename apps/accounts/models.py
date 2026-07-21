@@ -10,6 +10,7 @@ from django.db import models
 from django.utils.crypto import salted_hmac
 
 from .managers import UsuarioManager
+from config.base_model import MANAGED
 
 # Choices reutilizables
 ESTADO_ACTIVO = [("ACTIVO", "Activo"), ("INACTIVO", "Inactivo")]
@@ -32,7 +33,7 @@ class Rol(models.Model):
     actualizado_en = models.DateTimeField(auto_now=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "roles"
         verbose_name = "Rol"
         verbose_name_plural = "Roles"
@@ -77,7 +78,7 @@ class Usuario(models.Model):
     REQUIRED_FIELDS = ["nombres", "apellidos"]
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "usuarios"
         verbose_name = "Usuario"
         verbose_name_plural = "Usuarios"

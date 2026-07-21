@@ -1,5 +1,6 @@
 """Modelo de archivos adjuntos."""
 from django.db import models
+from config.base_model import MANAGED
 
 
 class ArchivoAdjunto(models.Model):
@@ -37,7 +38,7 @@ class ArchivoAdjunto(models.Model):
     estado = models.CharField(max_length=10, choices=ESTADO, default="ACTIVO")
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "archivos_adjuntos"
         verbose_name = "Archivo adjunto"
         verbose_name_plural = "Archivos adjuntos"

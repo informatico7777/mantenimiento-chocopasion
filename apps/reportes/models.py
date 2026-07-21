@@ -1,5 +1,6 @@
 """Modelos de reportes, indicadores y auditoría."""
 from django.db import models
+from config.base_model import MANAGED
 
 
 class ReporteGenerado(models.Model):
@@ -37,7 +38,7 @@ class ReporteGenerado(models.Model):
     estado = models.CharField(max_length=15, choices=ESTADO, default="GENERADO")
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "reportes_generados"
         verbose_name = "Reporte generado"
         verbose_name_plural = "Reportes generados"
@@ -65,7 +66,7 @@ class DetalleReporteGenerado(models.Model):
     creado_en = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "detalle_reportes_generados"
         verbose_name = "Detalle de reporte generado"
         verbose_name_plural = "Detalles de reportes generados"
@@ -98,7 +99,7 @@ class IndicadorMantenimiento(models.Model):
     actualizado_en = models.DateTimeField(auto_now=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "indicadores_mantenimiento"
         verbose_name = "Indicador de mantenimiento"
         verbose_name_plural = "Indicadores de mantenimiento"
@@ -128,7 +129,7 @@ class AuditoriaSistema(models.Model):
     ip_origen = models.CharField(max_length=45, blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "auditoria_sistema"
         verbose_name = "Auditoría"
         verbose_name_plural = "Auditoría del sistema"

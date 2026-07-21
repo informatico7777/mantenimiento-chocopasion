@@ -1,24 +1,27 @@
 """
 Script para migrar datos de MySQL a PostgreSQL (Heroku)
-Ejecutar después de hacer las migraciones en Heroku
+Ejecutar ANTES de desplegar en Heroku para exportar datos
 
 Uso:
-1. Asegúrate de tener acceso a ambas bases de datos
-2. Configura las credenciales en este script
-3. Ejecuta: python migrar_datos.py
+1. Activa el entorno virtual: venv\Scripts\activate
+2. Ejecuta: python migrar_datos.py
+3. Selecciona opción 1 para exportar datos de MySQL
 """
 
 import os
+import sys
 import django
-import MySQLdb
-import psycopg2
 
 # Configurar Django
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
+
+# Asegurarse de usar MySQL local
+os.environ['DB_ENGINE'] = 'django.db.backends.mysql'
+os.environ.pop('DATABASE_URL', None)  # Remover DATABASE_URL si existe
+
 django.setup()
 
 from django.core.management import call_command
-from django.db import connections
 
 def exportar_datos_mysql():
     """Exporta datos de MySQL a archivos JSON"""

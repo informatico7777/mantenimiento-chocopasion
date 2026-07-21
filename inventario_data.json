@@ -1,0 +1,285 @@
+[
+{
+  "model": "inventario.proveedor",
+  "pk": 1,
+  "fields": {
+    "nombre_proveedor": "Proveedor general de repuestos industriales",
+    "ruc": "20300325451",
+    "tipo_proveedor": "REPUESTOS",
+    "telefono": "903459730",
+    "correo": "vision@gmail.com",
+    "direccion": "Pendiente de registrar",
+    "observaciones": "",
+    "estado": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-07-15T22:17:44"
+  }
+},
+{
+  "model": "inventario.proveedor",
+  "pk": 2,
+  "fields": {
+    "nombre_proveedor": "Taller externo de mantenimiento",
+    "ruc": "107685276-834343",
+    "tipo_proveedor": "TALLER",
+    "telefono": "903459730",
+    "correo": "visionws@gmail.com",
+    "direccion": "Pendiente de registrar",
+    "observaciones": "",
+    "estado": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-07-15T22:20:03"
+  }
+},
+{
+  "model": "inventario.proveedor",
+  "pk": 3,
+  "fields": {
+    "nombre_proveedor": "Servicio técnico de refrigeración",
+    "ruc": "10768527836",
+    "tipo_proveedor": "REFRIGERACION",
+    "telefono": null,
+    "correo": null,
+    "direccion": "Pendiente de registrar",
+    "observaciones": "",
+    "estado": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-07-15T22:20:50"
+  }
+},
+{
+  "model": "inventario.proveedor",
+  "pk": 4,
+  "fields": {
+    "nombre_proveedor": "Servicio de calibración",
+    "ruc": "20101639278",
+    "tipo_proveedor": "CALIBRACION",
+    "telefono": "903459730",
+    "correo": "visionwes@gmail.com",
+    "direccion": "Pendiente de registrar",
+    "observaciones": "",
+    "estado": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-07-15T22:21:20"
+  }
+},
+{
+  "model": "inventario.proveedor",
+  "pk": 5,
+  "fields": {
+    "nombre_proveedor": "Suministros Industriales Huánuco S.A.C.",
+    "ruc": "20101639275",
+    "tipo_proveedor": "REPUESTOS",
+    "telefono": "903459730",
+    "correo": "visionn@gmail.com",
+    "direccion": "Huanuco",
+    "observaciones": "",
+    "estado": "ACTIVO",
+    "creado_en": "2026-07-15T22:19:16",
+    "actualizado_en": "2026-07-15T22:19:16"
+  }
+},
+{
+  "model": "inventario.repuesto",
+  "pk": 1,
+  "fields": {
+    "codigo_repuesto": "REP-TER-001",
+    "nombre_repuesto": "Termocupla",
+    "descripcion": "Sensor de temperatura para tostador/secador/marmita.",
+    "unidad_medida": "UNIDAD",
+    "stock_actual": "2.00",
+    "stock_minimo": "2.00",
+    "stock_maximo": "7.00",
+    "costo_unitario": "57.00",
+    "id_proveedor": 1,
+    "ubicacion_almacen": "Por definir",
+    "estado": "DISPONIBLE",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-07-15T19:01:38"
+  }
+},
+{
+  "model": "inventario.repuesto",
+  "pk": 2,
+  "fields": {
+    "codigo_repuesto": "REP-ROD-001",
+    "nombre_repuesto": "Rodamiento industrial",
+    "descripcion": "Rodamiento para máquinas rotativas.",
+    "unidad_medida": "UNIDAD",
+    "stock_actual": "5.00",
+    "stock_minimo": "2.00",
+    "stock_maximo": "7.00",
+    "costo_unitario": "65.00",
+    "id_proveedor": 1,
+    "ubicacion_almacen": "Por definir",
+    "estado": "DISPONIBLE",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-07-15T19:00:57"
+  }
+},
+{
+  "model": "inventario.repuesto",
+  "pk": 3,
+  "fields": {
+    "codigo_repuesto": "REP-FAJ-001",
+    "nombre_repuesto": "Faja de transmisión",
+    "descripcion": "Faja para sistemas de transmisión.",
+    "unidad_medida": "UNIDAD",
+    "stock_actual": "3.00",
+    "stock_minimo": "2.00",
+    "stock_maximo": "7.00",
+    "costo_unitario": "57.00",
+    "id_proveedor": 1,
+    "ubicacion_almacen": "Por definir",
+    "estado": "DISPONIBLE",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-07-15T18:58:59"
+  }
+},
+{
+  "model": "inventario.repuesto",
+  "pk": 4,
+  "fields": {
+    "codigo_repuesto": "REP-CON-001",
+    "nombre_repuesto": "Contactor eléctrico",
+    "descripcion": "Contactor para tablero eléctrico.",
+    "unidad_medida": "UNIDAD",
+    "stock_actual": "3.00",
+    "stock_minimo": "1.00",
+    "stock_maximo": "7.00",
+    "costo_unitario": "37.00",
+    "id_proveedor": 1,
+    "ubicacion_almacen": "Por definir",
+    "estado": "DISPONIBLE",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-07-15T18:56:30"
+  }
+},
+{
+  "model": "inventario.repuesto",
+  "pk": 5,
+  "fields": {
+    "codigo_repuesto": "REP-RES-001",
+    "nombre_repuesto": "Resistencia eléctrica",
+    "descripcion": "Resistencia para equipos térmicos o selladora.",
+    "unidad_medida": "UNIDAD",
+    "stock_actual": "5.00",
+    "stock_minimo": "3.00",
+    "stock_maximo": "10.00",
+    "costo_unitario": "29.00",
+    "id_proveedor": 1,
+    "ubicacion_almacen": "Por definir",
+    "estado": "DISPONIBLE",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-07-15T18:59:59"
+  }
+},
+{
+  "model": "inventario.repuesto",
+  "pk": 6,
+  "fields": {
+    "codigo_repuesto": "REP-TEF-001",
+    "nombre_repuesto": "Cinta teflón para selladora",
+    "descripcion": "Cinta antiadherente para barra de sellado.",
+    "unidad_medida": "METRO",
+    "stock_actual": "3.00",
+    "stock_minimo": "2.00",
+    "stock_maximo": "7.00",
+    "costo_unitario": "3.00",
+    "id_proveedor": 1,
+    "ubicacion_almacen": null,
+    "estado": "DISPONIBLE",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-07-15T18:55:24"
+  }
+},
+{
+  "model": "inventario.repuesto",
+  "pk": 7,
+  "fields": {
+    "codigo_repuesto": "REP-EMP-001",
+    "nombre_repuesto": "Empaque sanitario",
+    "descripcion": "Empaque para válvulas o tapas sanitarias.",
+    "unidad_medida": "UNIDAD",
+    "stock_actual": "2.00",
+    "stock_minimo": "2.00",
+    "stock_maximo": "4.00",
+    "costo_unitario": "17.00",
+    "id_proveedor": 1,
+    "ubicacion_almacen": "Por definir",
+    "estado": "DISPONIBLE",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-07-15T18:58:16"
+  }
+},
+{
+  "model": "inventario.maquinarepuesto",
+  "pk": 1,
+  "fields": {
+    "id_maquina": 7,
+    "id_repuesto": 2,
+    "cantidad_recomendada_stock": "3.00",
+    "criticidad_repuesto": "ALTA",
+    "tiempo_reposicion_dias": 4,
+    "observacion": "Repuesto asociado al motorreductor del agitador. Se recomienda mantener stock preventivo por riesgo de vibración, ruido o bloqueo del sistema de agitación.",
+    "creado_en": "2026-07-09T07:13:17"
+  }
+},
+{
+  "model": "inventario.maquinarepuesto",
+  "pk": 2,
+  "fields": {
+    "id_maquina": 7,
+    "id_repuesto": 1,
+    "cantidad_recomendada_stock": "2.00",
+    "criticidad_repuesto": "CRITICA",
+    "tiempo_reposicion_dias": 3,
+    "observacion": "Repuesto crítico para controlar la temperatura del chocolate. Su falla puede causar sobrecalentamiento, baja fluidez o solidificación parcial del producto.",
+    "creado_en": "2026-07-09T07:14:15"
+  }
+},
+{
+  "model": "inventario.maquinarepuesto",
+  "pk": 3,
+  "fields": {
+    "id_maquina": 7,
+    "id_repuesto": 7,
+    "cantidad_recomendada_stock": "3.00",
+    "criticidad_repuesto": "ALTA",
+    "tiempo_reposicion_dias": 2,
+    "observacion": "Repuesto usado para prevenir fugas de chocolate y evitar riesgos de contaminación durante la operación.",
+    "creado_en": "2026-07-09T07:15:49"
+  }
+},
+{
+  "model": "inventario.maquinarepuesto",
+  "pk": 4,
+  "fields": {
+    "id_maquina": 4,
+    "id_repuesto": 3,
+    "cantidad_recomendada_stock": "2.00",
+    "criticidad_repuesto": "CRITICA",
+    "tiempo_reposicion_dias": 15,
+    "observacion": "Mantener un juego completo para sustituir ambos rodamientos ante ruido, vibración, sobrecalentamiento o aumento de holgura. Verificar código y dimensiones del rodamiento instalado.",
+    "creado_en": "2026-07-15T21:55:51"
+  }
+},
+{
+  "model": "inventario.servicioexterno",
+  "pk": 1,
+  "fields": {
+    "id_ot": 1,
+    "id_maquina": 7,
+    "motivo_envio": "derr",
+    "id_proveedor": 1,
+    "fecha_salida": "2026-07-07",
+    "fecha_retorno_estimada": "2026-07-12",
+    "fecha_retorno_real": "2026-07-13",
+    "costo_servicio": "60.00",
+    "diagnostico_externo": "",
+    "estado_servicio": "ENVIADO",
+    "creado_en": "2026-07-09T07:46:57",
+    "actualizado_en": "2026-07-09T07:46:57"
+  }
+}
+]

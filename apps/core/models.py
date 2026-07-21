@@ -2,6 +2,7 @@
 from django.db import models
 
 from .choices import (
+from config.base_model import MANAGED
     CRITICIDAD,
     ESTADO_AREA,
     ESTADO_GENERICO,
@@ -28,7 +29,7 @@ class Area(models.Model):
     actualizado_en = models.DateTimeField(auto_now=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "areas"
         verbose_name = "Área"
         verbose_name_plural = "Áreas"
@@ -84,7 +85,7 @@ class Maquina(models.Model):
     actualizado_en = models.DateTimeField(auto_now=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "maquinas"
         verbose_name = "Máquina"
         verbose_name_plural = "Máquinas"
@@ -118,7 +119,7 @@ class FuncionProceso(models.Model):
     actualizado_en = models.DateTimeField(auto_now=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "funciones_proceso"
         verbose_name = "Función de proceso"
         verbose_name_plural = "Funciones de proceso"
@@ -142,7 +143,7 @@ class MaquinaFuncion(models.Model):
     creado_en = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "maquina_funcion"
         verbose_name = "Máquina-Función"
         verbose_name_plural = "Máquinas-Funciones"
@@ -191,7 +192,7 @@ class ComponenteMaquina(models.Model):
     actualizado_en = models.DateTimeField(auto_now=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "componentes_maquina"
         verbose_name = "Componente"
         verbose_name_plural = "Componentes"
@@ -227,7 +228,7 @@ class FallaProbable(models.Model):
     actualizado_en = models.DateTimeField(auto_now=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "fallas_probables"
         verbose_name = "Falla probable"
         verbose_name_plural = "Fallas probables"
@@ -259,7 +260,7 @@ class HistorialEstadoMaquina(models.Model):
     observacion = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "historial_estado_maquina"
         verbose_name = "Historial de estado"
         verbose_name_plural = "Historial de estados"

@@ -1,0 +1,1499 @@
+[
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 1,
+  "fields": {
+    "id_maquina": 1,
+    "pregunta": "¿La máquina se encuentra limpia y libre de residuos del lote anterior?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 1,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 2,
+  "fields": {
+    "id_maquina": 8,
+    "pregunta": "¿La máquina se encuentra limpia y libre de residuos del lote anterior?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 1,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 3,
+  "fields": {
+    "id_maquina": 2,
+    "pregunta": "¿La máquina se encuentra limpia y libre de residuos del lote anterior?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 1,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 4,
+  "fields": {
+    "id_maquina": 7,
+    "pregunta": "¿La máquina se encuentra limpia y libre de residuos del lote anterior?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 1,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 5,
+  "fields": {
+    "id_maquina": 10,
+    "pregunta": "¿La máquina se encuentra limpia y libre de residuos del lote anterior?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 1,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 6,
+  "fields": {
+    "id_maquina": 11,
+    "pregunta": "¿La máquina se encuentra limpia y libre de residuos del lote anterior?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 1,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 7,
+  "fields": {
+    "id_maquina": 3,
+    "pregunta": "¿La máquina se encuentra limpia y libre de residuos del lote anterior?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 1,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 8,
+  "fields": {
+    "id_maquina": 4,
+    "pregunta": "¿La máquina se encuentra limpia y libre de residuos del lote anterior?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 1,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 9,
+  "fields": {
+    "id_maquina": 5,
+    "pregunta": "¿La máquina se encuentra limpia y libre de residuos del lote anterior?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 1,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 10,
+  "fields": {
+    "id_maquina": 6,
+    "pregunta": "¿La máquina se encuentra limpia y libre de residuos del lote anterior?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 1,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 11,
+  "fields": {
+    "id_maquina": 9,
+    "pregunta": "¿La máquina se encuentra limpia y libre de residuos del lote anterior?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 1,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 12,
+  "fields": {
+    "id_maquina": 1,
+    "pregunta": "¿La máquina enciende correctamente y no presenta ruidos anormales?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 2,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 13,
+  "fields": {
+    "id_maquina": 8,
+    "pregunta": "¿La máquina enciende correctamente y no presenta ruidos anormales?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 2,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 14,
+  "fields": {
+    "id_maquina": 2,
+    "pregunta": "¿La máquina enciende correctamente y no presenta ruidos anormales?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 2,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 15,
+  "fields": {
+    "id_maquina": 7,
+    "pregunta": "¿La máquina enciende correctamente y no presenta ruidos anormales?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 2,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 16,
+  "fields": {
+    "id_maquina": 10,
+    "pregunta": "¿La máquina enciende correctamente y no presenta ruidos anormales?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 2,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 17,
+  "fields": {
+    "id_maquina": 11,
+    "pregunta": "¿La máquina enciende correctamente y no presenta ruidos anormales?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 2,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 18,
+  "fields": {
+    "id_maquina": 3,
+    "pregunta": "¿La máquina enciende correctamente y no presenta ruidos anormales?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 2,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 19,
+  "fields": {
+    "id_maquina": 4,
+    "pregunta": "¿La máquina enciende correctamente y no presenta ruidos anormales?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 2,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 20,
+  "fields": {
+    "id_maquina": 5,
+    "pregunta": "¿La máquina enciende correctamente y no presenta ruidos anormales?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 2,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 21,
+  "fields": {
+    "id_maquina": 6,
+    "pregunta": "¿La máquina enciende correctamente y no presenta ruidos anormales?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 2,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 22,
+  "fields": {
+    "id_maquina": 9,
+    "pregunta": "¿La máquina enciende correctamente y no presenta ruidos anormales?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 2,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 23,
+  "fields": {
+    "id_maquina": 1,
+    "pregunta": "¿No se observan fugas, cables expuestos, piezas flojas o riesgos de seguridad?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 3,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 24,
+  "fields": {
+    "id_maquina": 8,
+    "pregunta": "¿No se observan fugas, cables expuestos, piezas flojas o riesgos de seguridad?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 3,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 25,
+  "fields": {
+    "id_maquina": 2,
+    "pregunta": "¿No se observan fugas, cables expuestos, piezas flojas o riesgos de seguridad?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 3,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 26,
+  "fields": {
+    "id_maquina": 7,
+    "pregunta": "¿No se observan fugas, cables expuestos, piezas flojas o riesgos de seguridad?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 3,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 27,
+  "fields": {
+    "id_maquina": 10,
+    "pregunta": "¿No se observan fugas, cables expuestos, piezas flojas o riesgos de seguridad?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 3,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 28,
+  "fields": {
+    "id_maquina": 11,
+    "pregunta": "¿No se observan fugas, cables expuestos, piezas flojas o riesgos de seguridad?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 3,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 29,
+  "fields": {
+    "id_maquina": 3,
+    "pregunta": "¿No se observan fugas, cables expuestos, piezas flojas o riesgos de seguridad?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 3,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 30,
+  "fields": {
+    "id_maquina": 4,
+    "pregunta": "¿No se observan fugas, cables expuestos, piezas flojas o riesgos de seguridad?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 3,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 31,
+  "fields": {
+    "id_maquina": 5,
+    "pregunta": "¿No se observan fugas, cables expuestos, piezas flojas o riesgos de seguridad?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 3,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 32,
+  "fields": {
+    "id_maquina": 6,
+    "pregunta": "¿No se observan fugas, cables expuestos, piezas flojas o riesgos de seguridad?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 3,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 33,
+  "fields": {
+    "id_maquina": 9,
+    "pregunta": "¿No se observan fugas, cables expuestos, piezas flojas o riesgos de seguridad?",
+    "tipo_respuesta": "SI_NO",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": true,
+    "bloquea_produccion": true,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 3,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 34,
+  "fields": {
+    "id_maquina": 1,
+    "pregunta": "Observación del operador antes de iniciar producción",
+    "tipo_respuesta": "OBSERVACION",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": false,
+    "bloquea_produccion": false,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 4,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 35,
+  "fields": {
+    "id_maquina": 8,
+    "pregunta": "Observación del operador antes de iniciar producción",
+    "tipo_respuesta": "OBSERVACION",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": false,
+    "bloquea_produccion": false,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 4,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 36,
+  "fields": {
+    "id_maquina": 2,
+    "pregunta": "Observación del operador antes de iniciar producción",
+    "tipo_respuesta": "OBSERVACION",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": false,
+    "bloquea_produccion": false,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 4,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 37,
+  "fields": {
+    "id_maquina": 7,
+    "pregunta": "Observación del operador antes de iniciar producción",
+    "tipo_respuesta": "OBSERVACION",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": false,
+    "bloquea_produccion": false,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 4,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 38,
+  "fields": {
+    "id_maquina": 10,
+    "pregunta": "Observación del operador antes de iniciar producción",
+    "tipo_respuesta": "OBSERVACION",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": false,
+    "bloquea_produccion": false,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 4,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 39,
+  "fields": {
+    "id_maquina": 11,
+    "pregunta": "Observación del operador antes de iniciar producción",
+    "tipo_respuesta": "OBSERVACION",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": false,
+    "bloquea_produccion": false,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 4,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 40,
+  "fields": {
+    "id_maquina": 3,
+    "pregunta": "Observación del operador antes de iniciar producción",
+    "tipo_respuesta": "OBSERVACION",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": false,
+    "bloquea_produccion": false,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 4,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 41,
+  "fields": {
+    "id_maquina": 4,
+    "pregunta": "Observación del operador antes de iniciar producción",
+    "tipo_respuesta": "OBSERVACION",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": false,
+    "bloquea_produccion": false,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 4,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 42,
+  "fields": {
+    "id_maquina": 5,
+    "pregunta": "Observación del operador antes de iniciar producción",
+    "tipo_respuesta": "OBSERVACION",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": false,
+    "bloquea_produccion": false,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 4,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 43,
+  "fields": {
+    "id_maquina": 6,
+    "pregunta": "Observación del operador antes de iniciar producción",
+    "tipo_respuesta": "OBSERVACION",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": false,
+    "bloquea_produccion": false,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 4,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 44,
+  "fields": {
+    "id_maquina": 9,
+    "pregunta": "Observación del operador antes de iniciar producción",
+    "tipo_respuesta": "OBSERVACION",
+    "valor_minimo": null,
+    "valor_maximo": null,
+    "unidad_medida": null,
+    "obligatorio": false,
+    "bloquea_produccion": false,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 4,
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.checklistplantilla",
+  "pk": 45,
+  "fields": {
+    "id_maquina": 7,
+    "pregunta": "¿La marmita está limpia y sin restos del lote anterior?",
+    "tipo_respuesta": "TEXTO",
+    "valor_minimo": "60.00",
+    "valor_maximo": "90.00",
+    "unidad_medida": "°C",
+    "obligatorio": true,
+    "bloquea_produccion": false,
+    "frecuencia": "DIARIO",
+    "estado": "ACTIVO",
+    "orden_visualizacion": 1,
+    "creado_en": "2026-07-09T07:26:55",
+    "actualizado_en": "2026-07-09T07:26:55"
+  }
+},
+{
+  "model": "mantenimiento.checklistejecucion",
+  "pk": 1,
+  "fields": {
+    "id_maquina": 4,
+    "id_usuario": [
+      "admin"
+    ],
+    "fecha": "2026-07-16",
+    "turno": "MANANA",
+    "hora_inicio": "07:00:00",
+    "hora_fin": "08:00:00",
+    "resultado_general": "APTA",
+    "permite_produccion": true,
+    "observacion_general": "",
+    "firma_responsable": null,
+    "genero_reporte_falla": false,
+    "creado_en": "2026-07-15T22:04:23",
+    "actualizado_en": "2026-07-15T22:04:23"
+  }
+},
+{
+  "model": "mantenimiento.checklistdetalle",
+  "pk": 1,
+  "fields": {
+    "id_checklist": 1,
+    "id_item_checklist": 8,
+    "respuesta": null,
+    "valor_medido": null,
+    "cumple": true,
+    "observacion": null,
+    "requiere_ot": false,
+    "nivel_alerta": "BAJO",
+    "creado_en": "2026-07-15T22:04:23"
+  }
+},
+{
+  "model": "mantenimiento.checklistdetalle",
+  "pk": 2,
+  "fields": {
+    "id_checklist": 1,
+    "id_item_checklist": 19,
+    "respuesta": null,
+    "valor_medido": null,
+    "cumple": true,
+    "observacion": null,
+    "requiere_ot": false,
+    "nivel_alerta": "BAJO",
+    "creado_en": "2026-07-15T22:04:23"
+  }
+},
+{
+  "model": "mantenimiento.checklistdetalle",
+  "pk": 3,
+  "fields": {
+    "id_checklist": 1,
+    "id_item_checklist": 30,
+    "respuesta": null,
+    "valor_medido": null,
+    "cumple": true,
+    "observacion": null,
+    "requiere_ot": false,
+    "nivel_alerta": "BAJO",
+    "creado_en": "2026-07-15T22:04:23"
+  }
+},
+{
+  "model": "mantenimiento.checklistdetalle",
+  "pk": 4,
+  "fields": {
+    "id_checklist": 1,
+    "id_item_checklist": 41,
+    "respuesta": null,
+    "valor_medido": null,
+    "cumple": true,
+    "observacion": null,
+    "requiere_ot": false,
+    "nivel_alerta": "BAJO",
+    "creado_en": "2026-07-15T22:04:23"
+  }
+},
+{
+  "model": "mantenimiento.observaciondiaria",
+  "pk": 1,
+  "fields": {
+    "id_maquina": 7,
+    "id_usuario": [
+      "admin"
+    ],
+    "fecha_hora": "2026-06-25T06:37:50",
+    "turno": "MANANA",
+    "tipo_observacion": "FUGA",
+    "descripcion": "ac",
+    "nivel_importancia": "ALTO",
+    "afecta_produccion": false,
+    "requiere_revision_tecnica": false,
+    "estado_observacion": "CONVERTIDA_A_OT",
+    "id_lote": null,
+    "creado_en": "2026-06-25T06:37:50",
+    "actualizado_en": "2026-07-09T07:56:05"
+  }
+},
+{
+  "model": "mantenimiento.reportefalla",
+  "pk": 1,
+  "fields": {
+    "codigo_reporte": "RF-2026-0001",
+    "id_maquina": 7,
+    "id_usuario_reporta": [
+      "admin"
+    ],
+    "fecha_reporte": "2026-07-09T07:33:43",
+    "turno": "MANANA",
+    "sintoma": "Lectura incorrecta de temperatura",
+    "descripcion_falla": "El sensor de temperatura muestra una lectura diferente a la medición realizada con termómetro infrarrojo. La variación puede afectar el control térmico del chocolate.",
+    "nivel_urgencia": "ALTO",
+    "afecta_produccion": false,
+    "id_lote": null,
+    "origen_reporte": "CHECKLIST",
+    "estado_reporte": "ABIERTO",
+    "creado_en": "2026-07-09T07:33:43",
+    "actualizado_en": "2026-07-09T07:33:43"
+  }
+},
+{
+  "model": "mantenimiento.reportefalla",
+  "pk": 2,
+  "fields": {
+    "codigo_reporte": "RF-2026-0002",
+    "id_maquina": 7,
+    "id_usuario_reporta": [
+      "admin"
+    ],
+    "fecha_reporte": "2026-07-09T07:56:05",
+    "turno": "MANANA",
+    "sintoma": "Fuga (observación diaria)",
+    "descripcion_falla": "ac",
+    "nivel_urgencia": "ALTO",
+    "afecta_produccion": false,
+    "id_lote": null,
+    "origen_reporte": "OBSERVACION_DIARIA",
+    "estado_reporte": "ABIERTO",
+    "creado_en": "2026-07-09T07:56:05",
+    "actualizado_en": "2026-07-09T07:56:05"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 1,
+  "fields": {
+    "id_maquina": 1,
+    "tipo_mantenimiento": "PREVENTIVO",
+    "actividad": "Limpieza y revisión visual semanal",
+    "descripcion": "Revisión de limpieza, pernos, fugas, ruidos y estado general.",
+    "frecuencia": "SEMANAL",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": true,
+    "horario_recomendado": "FIN_SEMANA",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-07-02",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 2,
+  "fields": {
+    "id_maquina": 8,
+    "tipo_mantenimiento": "PREVENTIVO",
+    "actividad": "Limpieza y revisión visual semanal",
+    "descripcion": "Revisión de limpieza, pernos, fugas, ruidos y estado general.",
+    "frecuencia": "SEMANAL",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": true,
+    "horario_recomendado": "FIN_SEMANA",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-07-02",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 3,
+  "fields": {
+    "id_maquina": 2,
+    "tipo_mantenimiento": "PREVENTIVO",
+    "actividad": "Limpieza y revisión visual semanal",
+    "descripcion": "Revisión de limpieza, pernos, fugas, ruidos y estado general.",
+    "frecuencia": "SEMANAL",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": true,
+    "horario_recomendado": "FIN_SEMANA",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-07-02",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 4,
+  "fields": {
+    "id_maquina": 7,
+    "tipo_mantenimiento": "PREVENTIVO",
+    "actividad": "Limpieza y revisión visual semanal",
+    "descripcion": "Revisión de limpieza, pernos, fugas, ruidos y estado general.",
+    "frecuencia": "SEMANAL",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": true,
+    "horario_recomendado": "FIN_SEMANA",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-07-02",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 5,
+  "fields": {
+    "id_maquina": 10,
+    "tipo_mantenimiento": "PREVENTIVO",
+    "actividad": "Limpieza y revisión visual semanal",
+    "descripcion": "Revisión de limpieza, pernos, fugas, ruidos y estado general.",
+    "frecuencia": "SEMANAL",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": true,
+    "horario_recomendado": "FIN_SEMANA",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-07-02",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 6,
+  "fields": {
+    "id_maquina": 11,
+    "tipo_mantenimiento": "PREVENTIVO",
+    "actividad": "Limpieza y revisión visual semanal",
+    "descripcion": "Revisión de limpieza, pernos, fugas, ruidos y estado general.",
+    "frecuencia": "SEMANAL",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": true,
+    "horario_recomendado": "FIN_SEMANA",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-07-02",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 7,
+  "fields": {
+    "id_maquina": 3,
+    "tipo_mantenimiento": "PREVENTIVO",
+    "actividad": "Limpieza y revisión visual semanal",
+    "descripcion": "Revisión de limpieza, pernos, fugas, ruidos y estado general.",
+    "frecuencia": "SEMANAL",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": true,
+    "horario_recomendado": "FIN_SEMANA",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-07-02",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 8,
+  "fields": {
+    "id_maquina": 4,
+    "tipo_mantenimiento": "PREVENTIVO",
+    "actividad": "Limpieza y revisión visual semanal",
+    "descripcion": "Revisión de limpieza, pernos, fugas, ruidos y estado general.",
+    "frecuencia": "SEMANAL",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": true,
+    "horario_recomendado": "FIN_SEMANA",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-07-02",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 9,
+  "fields": {
+    "id_maquina": 5,
+    "tipo_mantenimiento": "PREVENTIVO",
+    "actividad": "Limpieza y revisión visual semanal",
+    "descripcion": "Revisión de limpieza, pernos, fugas, ruidos y estado general.",
+    "frecuencia": "SEMANAL",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": true,
+    "horario_recomendado": "FIN_SEMANA",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-07-02",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 10,
+  "fields": {
+    "id_maquina": 6,
+    "tipo_mantenimiento": "PREVENTIVO",
+    "actividad": "Limpieza y revisión visual semanal",
+    "descripcion": "Revisión de limpieza, pernos, fugas, ruidos y estado general.",
+    "frecuencia": "SEMANAL",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": true,
+    "horario_recomendado": "FIN_SEMANA",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-07-02",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 11,
+  "fields": {
+    "id_maquina": 9,
+    "tipo_mantenimiento": "PREVENTIVO",
+    "actividad": "Limpieza y revisión visual semanal",
+    "descripcion": "Revisión de limpieza, pernos, fugas, ruidos y estado general.",
+    "frecuencia": "SEMANAL",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": true,
+    "horario_recomendado": "FIN_SEMANA",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-07-02",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 12,
+  "fields": {
+    "id_maquina": 1,
+    "tipo_mantenimiento": "INSPECCION",
+    "actividad": "Checklist preoperacional diario",
+    "descripcion": "Validar estado antes de iniciar producción.",
+    "frecuencia": "DIARIO",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": false,
+    "horario_recomendado": "ANTES_PRODUCCION",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-06-25",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 13,
+  "fields": {
+    "id_maquina": 8,
+    "tipo_mantenimiento": "INSPECCION",
+    "actividad": "Checklist preoperacional diario",
+    "descripcion": "Validar estado antes de iniciar producción.",
+    "frecuencia": "DIARIO",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": false,
+    "horario_recomendado": "ANTES_PRODUCCION",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-06-25",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 14,
+  "fields": {
+    "id_maquina": 2,
+    "tipo_mantenimiento": "INSPECCION",
+    "actividad": "Checklist preoperacional diario",
+    "descripcion": "Validar estado antes de iniciar producción.",
+    "frecuencia": "DIARIO",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": false,
+    "horario_recomendado": "ANTES_PRODUCCION",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-06-25",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 15,
+  "fields": {
+    "id_maquina": 7,
+    "tipo_mantenimiento": "INSPECCION",
+    "actividad": "Checklist preoperacional diario",
+    "descripcion": "Validar estado antes de iniciar producción.",
+    "frecuencia": "DIARIO",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": false,
+    "horario_recomendado": "ANTES_PRODUCCION",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-06-25",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 16,
+  "fields": {
+    "id_maquina": 10,
+    "tipo_mantenimiento": "INSPECCION",
+    "actividad": "Checklist preoperacional diario",
+    "descripcion": "Validar estado antes de iniciar producción.",
+    "frecuencia": "DIARIO",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": false,
+    "horario_recomendado": "ANTES_PRODUCCION",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-06-25",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 17,
+  "fields": {
+    "id_maquina": 11,
+    "tipo_mantenimiento": "INSPECCION",
+    "actividad": "Checklist preoperacional diario",
+    "descripcion": "Validar estado antes de iniciar producción.",
+    "frecuencia": "DIARIO",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": false,
+    "horario_recomendado": "ANTES_PRODUCCION",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-06-25",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 18,
+  "fields": {
+    "id_maquina": 3,
+    "tipo_mantenimiento": "INSPECCION",
+    "actividad": "Checklist preoperacional diario",
+    "descripcion": "Validar estado antes de iniciar producción.",
+    "frecuencia": "DIARIO",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": false,
+    "horario_recomendado": "ANTES_PRODUCCION",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-06-25",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 19,
+  "fields": {
+    "id_maquina": 4,
+    "tipo_mantenimiento": "INSPECCION",
+    "actividad": "Checklist preoperacional diario",
+    "descripcion": "Validar estado antes de iniciar producción.",
+    "frecuencia": "DIARIO",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": false,
+    "horario_recomendado": "ANTES_PRODUCCION",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-06-25",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 20,
+  "fields": {
+    "id_maquina": 5,
+    "tipo_mantenimiento": "INSPECCION",
+    "actividad": "Checklist preoperacional diario",
+    "descripcion": "Validar estado antes de iniciar producción.",
+    "frecuencia": "DIARIO",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": false,
+    "horario_recomendado": "ANTES_PRODUCCION",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-06-25",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 21,
+  "fields": {
+    "id_maquina": 6,
+    "tipo_mantenimiento": "INSPECCION",
+    "actividad": "Checklist preoperacional diario",
+    "descripcion": "Validar estado antes de iniciar producción.",
+    "frecuencia": "DIARIO",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": false,
+    "horario_recomendado": "ANTES_PRODUCCION",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-06-25",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.planmantenimiento",
+  "pk": 22,
+  "fields": {
+    "id_maquina": 9,
+    "tipo_mantenimiento": "INSPECCION",
+    "actividad": "Checklist preoperacional diario",
+    "descripcion": "Validar estado antes de iniciar producción.",
+    "frecuencia": "DIARIO",
+    "cada_horas_uso": null,
+    "duracion_estimada_horas": null,
+    "requiere_parada": false,
+    "horario_recomendado": "ANTES_PRODUCCION",
+    "responsable": null,
+    "fecha_ultima_ejecucion": null,
+    "fecha_proxima_ejecucion": "2026-06-25",
+    "estado_plan": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "mantenimiento.ordentrabajo",
+  "pk": 1,
+  "fields": {
+    "codigo_ot": "OT-2026-0001",
+    "id_maquina": 7,
+    "id_reporte_falla": 1,
+    "id_plan": 1,
+    "tipo_ot": "PREVENTIVA",
+    "prioridad": "ALTA",
+    "estado_ot": "PROGRAMADA",
+    "descripcion_trabajo": "Revisar el sensor de temperatura de la marmita, comparar la lectura con termómetro infrarrojo, verificar conexiones eléctricas y reemplazar el sensor si la desviación persiste.",
+    "fecha_creacion": "2026-07-09T07:44:43",
+    "fecha_programada": "2026-07-10",
+    "hora_programada": "08:00:00",
+    "fecha_inicio_real": "2026-07-10T07:42:00",
+    "fecha_fin_real": "2026-07-10T07:42:00",
+    "tiempo_parada_horas": "3.00",
+    "responsable_tecnico": null,
+    "requiere_repuesto": false,
+    "requiere_servicio_externo": false,
+    "tipo_atencion": "PENDIENTE_DEFINIR",
+    "costo_mano_obra": "500.00",
+    "costo_repuestos": "100.00",
+    "costo_servicio_externo": "80.00",
+    "costo_total": "680.00",
+    "validado_por": [
+      "admin"
+    ],
+    "observacion_cierre": "",
+    "creado_en": "2026-07-09T07:44:43",
+    "actualizado_en": "2026-07-09T07:44:43"
+  }
+}
+]

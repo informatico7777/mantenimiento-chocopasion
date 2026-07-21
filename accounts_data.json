@@ -1,0 +1,74 @@
+[
+{
+  "model": "accounts.rol",
+  "pk": 1,
+  "fields": {
+    "nombre_rol": "ADMINISTRADOR",
+    "descripcion": "Gestiona usuarios, catálogos, máquinas, reportes e indicadores.",
+    "estado": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "accounts.rol",
+  "pk": 2,
+  "fields": {
+    "nombre_rol": "JEFE_PRODUCCION",
+    "descripcion": "Supervisa producción, libera máquinas y revisa reportes.",
+    "estado": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "accounts.rol",
+  "pk": 3,
+  "fields": {
+    "nombre_rol": "TECNICO_MANTENIMIENTO",
+    "descripcion": "Ejecuta mantenimiento preventivo, correctivo y predictivo.",
+    "estado": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "accounts.rol",
+  "pk": 4,
+  "fields": {
+    "nombre_rol": "OPERADOR",
+    "descripcion": "Realiza checklist diario y registra observaciones.",
+    "estado": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "accounts.rol",
+  "pk": 5,
+  "fields": {
+    "nombre_rol": "CONSULTA",
+    "descripcion": "Solo visualiza información autorizada.",
+    "estado": "ACTIVO",
+    "creado_en": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-06-25T01:59:29"
+  }
+},
+{
+  "model": "accounts.usuario",
+  "fields": {
+    "nombres": "Administrador",
+    "apellidos": "Sistema",
+    "dni": null,
+    "correo": "admin@chocopasion.local",
+    "telefono": null,
+    "id_rol": 1,
+    "id_area": null,
+    "usuario_login": "admin",
+    "password": "pbkdf2_sha256$720000$NP8flx4ElSOGDyKtFZQXNR$2cXsluKy/MNNiKA95MpUsjiA6HoH01sOXcK2yU4Ndcg=",
+    "estado": "ACTIVO",
+    "fecha_registro": "2026-06-25T01:59:29",
+    "actualizado_en": "2026-07-09T05:41:46"
+  }
+}
+]

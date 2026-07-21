@@ -1,0 +1,59 @@
+[
+{
+  "model": "documentos.archivoadjunto",
+  "pk": 1,
+  "fields": {
+    "tipo_entidad": "MAQUINA",
+    "id_entidad": 1,
+    "categoria_archivo": "MANUAL",
+    "nombre_archivo": "INFORME CALIDAD (1).pdf",
+    "tipo_archivo": "PDF",
+    "ruta_archivo": "manuales/20260709071905_INFORME CALIDAD (1).pdf",
+    "descargable": true,
+    "fecha_subida": "2026-07-09T07:19:06",
+    "subido_por": [
+      "admin"
+    ],
+    "descripcion": "rte",
+    "estado": "ACTIVO"
+  }
+},
+{
+  "model": "documentos.archivoadjunto",
+  "pk": 2,
+  "fields": {
+    "tipo_entidad": "MAQUINA",
+    "id_entidad": 2,
+    "categoria_archivo": "FOTO_MAQUINA",
+    "nombre_archivo": "Captura de pantalla 2026-05-16 155632.png",
+    "tipo_archivo": "PNG",
+    "ruta_archivo": "maquinas/20260709072024_Captura de pantalla 2026-05-16 155632.png",
+    "descargable": true,
+    "fecha_subida": "2026-07-09T07:20:24",
+    "subido_por": [
+      "admin"
+    ],
+    "descripcion": "reh",
+    "estado": "ACTIVO"
+  }
+},
+{
+  "model": "documentos.archivoadjunto",
+  "pk": 3,
+  "fields": {
+    "tipo_entidad": "REPORTE",
+    "id_entidad": 1,
+    "categoria_archivo": "FOTO_MAQUINA",
+    "nombre_archivo": "ima1.jpg",
+    "tipo_archivo": "JPG",
+    "ruta_archivo": "maquinas/20260709075523_ima1.jpg",
+    "descargable": true,
+    "fecha_subida": "2026-07-09T07:55:24",
+    "subido_por": [
+      "admin"
+    ],
+    "descripcion": "fred",
+    "estado": "ACTIVO"
+  }
+}
+]

@@ -1,5 +1,6 @@
 """Modelos de producción y energía: lotes y consumo energético."""
 from django.db import models
+from config.base_model import MANAGED
 
 
 class LoteProduccion(models.Model):
@@ -28,7 +29,7 @@ class LoteProduccion(models.Model):
     actualizado_en = models.DateTimeField(auto_now=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "lotes_produccion"
         verbose_name = "Lote de producción"
         verbose_name_plural = "Lotes de producción"
@@ -71,7 +72,7 @@ class ConsumoEnergetico(models.Model):
     creado_en = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "consumo_energetico"
         verbose_name = "Consumo energético"
         verbose_name_plural = "Consumos energéticos"

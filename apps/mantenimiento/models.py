@@ -2,6 +2,7 @@
 from django.db import models
 
 from apps.core.choices import NIVEL_ALERTA, TURNO
+from config.base_model import MANAGED
 
 
 class ChecklistPlantilla(models.Model):
@@ -39,7 +40,7 @@ class ChecklistPlantilla(models.Model):
     actualizado_en = models.DateTimeField(auto_now=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "checklist_plantilla"
         verbose_name = "Ítem de checklist"
         verbose_name_plural = "Plantilla de checklist"
@@ -78,7 +79,7 @@ class ChecklistEjecucion(models.Model):
     actualizado_en = models.DateTimeField(auto_now=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "checklist_ejecucion"
         verbose_name = "Ejecución de checklist"
         verbose_name_plural = "Ejecuciones de checklist"
@@ -113,7 +114,7 @@ class ChecklistDetalle(models.Model):
     creado_en = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "checklist_detalle"
         verbose_name = "Detalle de checklist"
         verbose_name_plural = "Detalles de checklist"
@@ -165,7 +166,7 @@ class ObservacionDiaria(models.Model):
     actualizado_en = models.DateTimeField(auto_now=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "observaciones_diarias"
         verbose_name = "Observación diaria"
         verbose_name_plural = "Observaciones diarias"
@@ -223,7 +224,7 @@ class ReporteFalla(models.Model):
     actualizado_en = models.DateTimeField(auto_now=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "reportes_falla"
         verbose_name = "Reporte de falla"
         verbose_name_plural = "Reportes de falla"
@@ -292,7 +293,7 @@ class PlanMantenimiento(models.Model):
     actualizado_en = models.DateTimeField(auto_now=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "plan_mantenimiento"
         verbose_name = "Plan de mantenimiento"
         verbose_name_plural = "Planes de mantenimiento"
@@ -369,7 +370,7 @@ class OrdenTrabajo(models.Model):
     actualizado_en = models.DateTimeField(auto_now=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "ordenes_trabajo"
         verbose_name = "Orden de trabajo"
         verbose_name_plural = "Órdenes de trabajo"
@@ -411,7 +412,7 @@ class DetalleOrdenTrabajo(models.Model):
     creado_en = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "detalle_orden_trabajo"
         verbose_name = "Detalle de OT"
         verbose_name_plural = "Detalles de OT"
@@ -440,7 +441,7 @@ class MedicionOperativa(models.Model):
     observacion = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = MANAGED
         db_table = "mediciones_operativas"
         verbose_name = "Medición operativa"
         verbose_name_plural = "Mediciones operativas"
